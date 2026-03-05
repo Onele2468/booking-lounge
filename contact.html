@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Contact Us | The Book Lounge</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Onele">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://kit.fontawesome.com/ac35ccda32.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="return.html">Returns</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <form action="search.html" method="get" class="search-form">
+                    <input type="text" name="query" placeholder="Search by title or author" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="contact">
+            <div class="contact-intro">
+                <h2>Contact Us</h2>
+                <p>Have a question about a book? Send us a message We'd love to hear from you! Whether you have questions about our books, policies, or want to share feedback, please get in touch or reach out via email or phone.</p>
+            </div>
+
+            <div class="contact-layout">
+                <form class="contact-form" id="contactForm">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="6" required></textarea>
+                    
+                    <button type="submit"><a href="mailto:info@thebooklounge.com">Send Email</a></button>
+                </form>
+                
+                <div class="whatsapp-box-form" id="whatsapp-section">
+                    <h3> Chat with us on WhatsApp</h3>
+                    <p>Fill in your details and send us a message directly on WhatsApp</p>
+                    <form id="whatsappBoxForm" class="whatsapp-form">
+                        <div class="form-group">
+                            <label for="whatsapp-name">Your Name </label>
+                            <input type="text" id="whatsapp-name" name="name" placeholder="Enter your name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp-number">Your Number</label>
+                            <input type="text" id="whatsapp-number" name="whatsapp-number" placeholder="Enter your number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="whatsapp-message">Your Message </label>
+                            <textarea id="whatsapp-message" name="whatsapp-message" placeholder="Type your message here" rows="5" required></textarea>
+                        </div>
+                        <div class="icon">
+                            <a href="https://wa.me/27711049647?text=Hi%20The%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20would%20like%20to%20know%20more!" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+                              
+
+            <aside class="contact-info-alt">
+                <h4 style="text-align:center;">Get in Touch</h4>
+                <p><strong>Email:</strong> info@thebooklounge.com</p>
+                <p><strong>Phone:</strong> 021 462 2425</p>
+                <p><strong>Address:</strong> 71 Roeland Street, Cape Town City Centre, 8001</p>
+                
+                <h4 style="text-align:center; margin-top: 20px;">Business Hours</h4>
+                <p><strong>Monday - Friday:</strong> 09h00 - 18h00</p>
+                <p><strong>Saturday:</strong> 09h00 - 16h00</p>
+                <p><strong>Sunday:</strong> 10h00 - 16h00</p>
+            </aside>
+
+            <section class="location-section">
+                <div class="location-header">
+                    <h2><i class="fas fa-map-location-dot"></i> Visit Us</h2>
+                    <p>Find us in the heart of Cape Town CBD</p>
+                </div>
+
+                <div class="location-container">
+                    <div class="map-wrapper">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.0235853677596!2d18.41976!3d-33.92541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc67e2f3f3f3f3%3A0x1234567890abcdef!2s71%20Roeland%20St%2C%20Cape%20Town%2C%208001!5e0!3m2!1sen!2sza!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div class="directions-info">
+                        <div class="location-details">
+                            <h3><i class="fas fa-location-dot"></i> Our Location</h3>
+                            <p class="address">
+                                <strong>The Book Lounge</strong><br>
+                                71 Roeland Street<br>
+                                Cape Town City Centre<br>
+                                Western Cape, 8001<br>
+                                South Africa
+                            </p>
+
+                            <div class="directions-buttons">
+                                <a href="https://www.google.com/maps/dir/?api=1&destination=71+Roeland+Street,Cape+Town,8001" target="_blank" class="direction-btn google-maps">
+                                    <i class="fas fa-directions"></i> Google Maps
+                                </a>
+                                <a href="https://maps.apple.com/?address=71%20Roeland%20Street,%20Cape%20Town,%208001,%20South%20Africa" target="_blank" class="direction-btn apple-maps">
+                                    <i class="fas fa-map"></i> Apple Maps
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="parking-transport">
+                            <h3><i class="fas fa-car"></i> Getting Around</h3>
+                            <ul>
+                                <li><strong>Parking:</strong> Street parking available. Several paid parking lots nearby</li>
+                                <li><strong>Public Transport:</strong> Close to MyCiti bus routes and train stations</li>
+                                <li><strong>Walking:</strong> Located in Cape Town CBD, accessible on foot</li>
+                                <li><strong>Taxi:</strong> Convenient taxi rank locations in the area</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+
+    </main>
+
+
+
+
+<footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-logo-section">
+                <img src="Logo.jpg" alt="The Book Lounge Logo">
+                <p class="footer-tagline">Cape Town's cozy independent bookstore</p>
+            </div>
+
+            <div class="footer-main-content">
+                <div class="footer-section">
+                    <h5><i class="fas fa-map-marker-alt"></i> Location</h5>
+                    <p>71 Roeland Street<br>Cape Town, South Africa</p>
+                </div>
+
+                <div class="footer-section">
+                    <h5><i class="fas fa-clock"></i> Hours</h5>
+                    <ul>
+                        <li>Mon - Fri: 09h00 - 18h00</li>
+                        <li>Saturday: 09h00 - 16h00</li>
+                        <li>Sunday: 10h00 - 16h00</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h5><i class="fas fa-share-alt"></i> Follow Us</h5>
+                    <div class="social-links">
+                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://wa.me/0711049647" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Book Lounge. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+
+
+
+</body>
+</html>

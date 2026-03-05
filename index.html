@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Book Lounge</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Onele">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+</head>
+<body>
+    <header>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="product.html">Products</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="return.html">Returns</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="search-container">
+                <form action="search.html" method="get" class="search-form">
+                    <input type="text" name="query" placeholder="Search by title or author" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div>
+        <section id="home">
+            <div class="hero">
+                <h1>Welcome to The Book Lounge</h1>
+                <p>Cape Town's cozy independent bookstore</p>
+                <div class="book-grid">
+                     <div class="product-item" onclick="openBookModal(0)" style="cursor: pointer;">
+                        <img src="pic/this-country-hates-our-boys.jpg" alt="Book Cover">
+                        <h3>This Country Hates Our Boys</h3>
+                        <p class="Author">Mzamo Masito</p>
+                        <p class="Price">R360.00</p>
+                    </div>
+                    <div class="product-item" onclick="openBookModal(1)" style="cursor: pointer;">
+                        <img src="pic/bikos.jpg" alt="Book Cover">
+                        <h3>Biko</h3>
+                        <p class="Author">Steve Biko</p>
+                        <p class="Price">R249.00</p>
+                    </div>
+                    <div class="product-item" onclick="openBookModal(2)" style="cursor: pointer;">
+                        <img src="pic/capefever.jpg" alt="Book Cover">
+                        <h3>Cape Fever</h3>
+                        <p class="Author">Nadia Davids</p>
+                        <p class="Price">R360.00</p>
+                        <p style="color: slategray;">Out of Stock</p>
+
+                    </div>
+                    <div class="product-item" onclick="openBookModal(3)" style="cursor: pointer;">
+                        <img src="pic/cominginfromthecold.jpg" alt="Book Cover">
+                        <h3>Coming in from the Cold</h3>
+                        <p class="Author">Bonang Francis Mohale</p>
+                        <p class="Price">R360.00</p>
+                    </div>
+                    <div class="product-item" onclick="openBookModal(4)" style="cursor: pointer;">
+                        <img src="pic/darkershade.jpg" alt="Book Cover">
+                        <h3>A Darker Shade</h3>
+                        <p class="Author">Deborah Posel</p>
+                        <p class="Price">R420.00</p>
+                        <p style="color: slategray;">Out of Stock</p>
+                    </div>
+                    <div class="product-item" onclick="openBookModal(5)" style="cursor: pointer;">
+                        <img src="pic/education.jpg" alt="Book Cover">
+                        <h3>Education</h3>
+                        <p class="Author">Various</p>
+                        <p class="Price">R380.00</p>
+                    </div>
+                    <div class="product-item" onclick="openBookModal(6)" style="cursor: pointer;">
+                        <img src="pic/haram.jpg" alt="Book Cover">
+                        <h3>Haram</h3>
+                        <p class="Author">Zubayr Charles</p>
+                        <p class="Price">R350.00</p>
+                    </div>
+                    <div class="product-item" onclick="openBookModal(7)" style="cursor: pointer;">
+                        <img src="pic/mountains.jpg" alt="Book Cover">
+                        <h3>Mountains</h3>
+                        <p class="Author">Roger Lucey</p>
+                        <p class="Price">R350.00</p>
+                    </div>
+                    <div class="product-item" onclick="openBookModal(8)" style="cursor: pointer;">
+                        <img src="pic/sitesofremembering.jpg" alt="Book Cover">
+                        <h3>Sites of Remembering</h3>
+                        <p class="Author">Abebe Zegeye</p>
+                        <p class="Price">R612.00</p>
+                    </div>      
+                    
+                </div>
+            </div>
+        </section>
+
+        <div class="about-wrapper">
+        <section id="about-preview">
+            <h2>About Us</h2>
+            <p>The Book Lounge is an independent bookstore in Cape Town CBD, hosting author events and selling local & international books.</p>
+        </section>
+        </div>
+        
+    </main>
+
+    <div id="bookModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookModal()">&times;</span>
+            <div class="modal-body">
+                <div class="modal-left">
+                    <img id="modalBookImage" src="" alt="Book Cover">
+                </div>
+                <div class="modal-right">
+                    <h2 id="modalBookTitle"></h2>
+                    <p class="modal-author">by <span id="modalBookAuthor"></span></p>
+                    <p class="modal-price" id="modalBookPrice"></p>
+                    <div class="book-details">
+                        <p><strong>Format:</strong> <span id="modalBookFormat"></span></p>
+                        <p><strong>Pages:</strong> <span id="modalBookPages"></span></p>
+                    </div>
+                    <h3>About This Book</h3>
+                    <p id="modalBookDescription"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const books = [
+            {
+                title: "This Country Hates Our Boys",
+                author: "Mzamo Masito",
+                price: "R360.00",
+                image: "pic/this-country-hates-our-boys.jpg",
+                pages: 300,
+                format: "Paperback",
+                description: "I do not hate boys, I hate men. This provocative statement sets the stage for a searing exploration of the complex relationship South African society holds with its Black and Coloured men and boys. This Country Hates Our Boys confronts the pervasive ‘cold and hot love’ that often translates into collective male guilt."
+            },
+            {
+                title: "Biko",
+                author: "Steve Biko",
+                price: "R320.00",
+                image: "pic/bikos.jpg",
+                pages: 190,
+                format: "Paperback",
+                description: "Examining Biko’s edgy ideas of power and resistance, Sithole provides new insights into struggles in South Africa over land ownership, media control, shared resources, and even the historical record."
+            },
+            {
+                title: "Cape Fever",
+                author: "Nadia Davids",
+                price: "R360.00",
+                image: "pic/capefever.jpg",
+                pages: 228,
+                format: "Paperback",
+                description: "Set in the Cape Colony just after WW1, Cape Fever is a superb depiction of the Cape in the 1920s, particularly of the Quarter and the District."
+            },
+            {
+                title: "Coming in from the Cold",
+                author: "Bonang Francis Mohale",
+                price: "R360.00",
+                image: "pic/cominginfromthecold.jpg",
+                pages: 272,
+                format: "Hardcover",
+                description: "From Daveyton to Davos, Professor Bonang Francis Mohale has defied odds, challenged the status quo and used every opportunity afforded to him to carve his own way in the world. More than that, he has chosen to take as many people as possible along with him."
+            },
+            {
+                title: "A Darker Shade",
+                author: "Deborah Posel",
+                price: "R420.00",
+                image: "pic/darkershade.jpg",
+                pages: 368,
+                format: "Hardcover",
+                description: "A personal journey through forgotten history, Darker Shade of Pale uncovers the hidden story of global migration at the turn of the twentieth century from the Jewish territories of the Russian Empire, called The Pale of Settlement, to the far-flung British colony of South Africa. Following the life of the author's grandfather – an ordinary man whose struggles and disappointments mirror those of countless others – this book challenges the common narrative of Jewish immigrant success in South Africa."
+            },
+            {
+                title: "Education",
+                author: "Various",
+                price: "R380.00",
+                image: "pic/education.jpg",
+                pages: 281,
+                format: "Paperback",
+                description: "From Education Crisis to Organisation unlocks the story of how learning became a movement in South Africa – and changed lives beyond the classroom."
+            },
+            {
+                title: "Haram",
+                author: "Zubayr Charles",
+                price: "R350.00",
+                image: "pic/haram.jpg",
+                pages: 272,
+                format: "Paperback",
+                description: "Haram is an unflinching tale alive with hidden and unspoken desires."
+            },
+            {
+                title: "Mountains",
+                author: "Roger Lucey",
+                price: "R350.00",
+                image: "pic/mountains.jpg",
+                pages: 218,
+                format: "Paperback",
+                description: "Roger Lucey survived a covert security police campaign which destroyed his music career. He survived the drug addiction and disaffection which followed. He survived a decade and a half as a cameraman documenting the wars of Africa and Eastern Europe. Survival was not enough though. Broken and despairing, he needed to find a way to reclaim his life and creativity."
+            },
+            {
+                title: "Sites of Remembering",
+                author: "Abebe Zegeye",
+                price: "R612.00",
+                image: "pic/sitesofremembering.jpg",
+                pages: 368,
+                format: "Hardcover",
+                description: "A richly illustrated, thought provoking and captivating book exploring the meaning and understanding of African art from an African perspective, through African memory. Zegeye challenges us to examine our reference points and to look again as we are taken on a journey through Sites of Remembering."
+            }
+        ];
+
+        function openBookModal(bookIndex) {
+            const book = books[bookIndex];
+            document.getElementById('modalBookImage').src = book.image;
+            document.getElementById('modalBookTitle').textContent = book.title;
+            document.getElementById('modalBookAuthor').textContent = book.author;
+            document.getElementById('modalBookPrice').textContent = book.price;
+            document.getElementById('modalBookPages').textContent = book.pages + ' pages';
+            document.getElementById('modalBookFormat').textContent = book.format;
+            document.getElementById('modalBookDescription').textContent = book.description;
+            
+            document.getElementById('bookModal').style.display = 'block';
+        }
+
+        function closeBookModal() {
+            document.getElementById('bookModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('bookModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
+    
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-logo-section">
+                <img src="Logo.jpg" alt="The Book Lounge Logo">
+                <p class="footer-tagline">Cape Town's cozy independent bookstore</p>
+            </div>
+
+            <div class="footer-main-content">
+                <div class="footer-section">
+                    <h5><i class="fas fa-map-marker-alt"></i> Location</h5>
+                    <p>71 Roeland Street<br>Cape Town, South Africa</p>
+                </div>
+
+                <div class="footer-section">
+                    <h5><i class="fas fa-clock"></i> Hours</h5>
+                    <ul>
+                        <li>Mon - Fri: 09h00 - 18h00</li>
+                        <li>Saturday: 09h00 - 16h00</li>
+                        <li>Sunday: 10h00 - 16h00</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h5><i class="fas fa-share-alt"></i> Follow Us</h5>
+                    <div class="social-links">
+                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://wa.me/0711049647" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Book Lounge. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a></p>
+        </div>
+
+    </footer>
+   
+
+</body>
+</html>
+
+
+
+

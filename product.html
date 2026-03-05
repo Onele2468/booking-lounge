@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Book keeping lounge</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Onele">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="return.html">Returns</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="search-container">
+          <form action="search.html" method="get" class="search-form">
+            <input type="text" name="query" placeholder="Search by title or author" required>
+            <button type="submit">Search</button>
+          </form>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section id="products">
+        <h2>Our Products</h2>
+        <p>We offer a wide range of books including fiction, non-fiction, children's books, and more. We also host literary events and have a cozy café area for our customers to enjoy.</p>
+      </section>
+
+      <section class="intro">
+        <h2>Welcome to The Book Lounge</h2>
+        <p>Discover a world of literature at The Book Lounge, Cape Town's beloved independent bookstore. We offer a curated selection of books, host engaging literary events, and provide a cozy café space for book lovers to connect and unwind.</p>
+      </section>
+
+
+    <section class="featured">
+      <h2>Featured Books</h2>
+      <div class="product-grid">
+
+        <div class="product-item" onclick="openBookModal(0)" style="cursor: pointer;">
+          <img src="images/this-is-why-you-dream.jpg" alt="This Is Why You Dream">
+          <h3>This Is Why You Dream</h3>
+          <p class="author">Rahul Jandial</p>
+          <p class="price">R295.00</p>
+          <p style="color: slategray;">Out of Stock</p>
+          <p style="color: slategray;">Out of Stock</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(1)" style="cursor: pointer;">
+          <img src="images/enter-ghost.jpg" alt="Enter Ghost">
+          <h3>Enter Ghost</h3>
+          <p class="author">Isabella Hammad</p>
+          <p class="price">R275.00</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(2)" style="cursor: pointer;">
+          <img src="images/dr-of-hearts-scaled.jpg" alt="Dr. of Hearts">
+          <h3>Dr. of Hearts</h3>
+          <p class="author">Judy Dlamini, Kopano Matiwa Mabaso</p>
+          <p class="price">R372.00</p>
+          <p style="color: slategray;">Out of Stock</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(3)" style="cursor: pointer;">
+          <img src="images/SPLENDID-TAPESTRY-HR.jpg" alt="The Splendid Tapestry of African Life">
+          <h3>The Splendid Tapestry of African Life</h3>
+          <p class="author">Adekeye Adebajo</p>
+          <p class="price">R430.00</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(4)" style="cursor: pointer;">
+          <img src="images/sa-alphabet-of-affirmations.jpg" alt="Alphabet of Affirmations">
+          <h3>Alphabet of Affirmations</h3>
+          <p class="author">Nyasha Williams</p>
+          <p class="price">R210.00</p>
+          <p style="color: slategray;">Out of Stock</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(5)" style="cursor: pointer;">
+          <img src="images/gt-wild-swimming.jpg" alt="Great Tales of Wild Swimming">
+          <h3>Great Tales of Wild Swimming</h3>
+          <p class="author">Matthew & Serai Dowling</p>
+          <p class="price">R475.00</p>
+          <p style="color: slategray;">Out of Stock</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(6)" style="cursor: pointer;">
+          <img src="images/crossroads.jpg" alt="Crossroads">
+          <h3>Crossroads</h3>
+          <p class="author">André Trantraal, Ashley Marais, Koni Benson, Nathan Trantraal</p>
+          <p class="price">R280.00</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(7)" style="cursor: pointer;">
+          <img src="images/white-supremacy.jpg" alt="White Supremacy">
+          <h3>White Supremacy</h3>
+          <p class="author">Gavin Evans</p>
+          <p class="price">R295.00</p>
+          <p style="color: slategray;">Out of Stock</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(8)" style="cursor: pointer;">
+          <img src="images/palestine-in-my-heart.jpg" alt="Palestine in My Heart">
+          <h3>Palestine in My Heart</h3>
+          <p class="author">Pitika Ntuli</p>
+          <p class="price">R235.00</p>
+          <p style="color: slategray;">Out of Stock</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(9)" style="cursor: pointer;">
+          <img src="images/ndibhala-intando-yam.jpg">
+          <h3>Ndibhala Intando Yam</h3>
+          <p class="Author">Steve Biko</p>
+          <p class="Price">R290.00</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(10)" style="cursor: pointer;">
+          <img src="images/long-walk-to-freedom.jpg" alt="Long Walk to Freedom;">
+          <h3>Long Walk to Freedom</h3>
+          <p class="Author">Nelson Mandela</p>
+          <p class="Price">R415.00</p>
+        </div>
+        <div class="product-item" onclick="openBookModal(11)" style="cursor: pointer;">
+          <img src="images/alexandra.jpg" alt="Alexandra: A Backstory">
+          <h3>Alexandra: A Backstory</h3>
+          <p class="Author">Solam Mkhabela</p>
+          <p class="Price">R280.00</p>
+        </div> 
+      </div>
+    </section>
+
+    <div id="bookModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeBookModal()">&times;</span>
+        <div class="modal-body">
+          <div class="modal-left">
+            <img id="modalBookImage" src="" alt="Book Cover">
+          </div>
+          <div class="modal-right">
+            <h2 id="modalBookTitle"></h2>
+            <p class="modal-author">by <span id="modalBookAuthor"></span></p>
+            <p class="modal-price" id="modalBookPrice"></p>
+            <div class="book-details">
+              <p><strong>Format:</strong> <span id="modalBookFormat"></span></p>
+              <p><strong>Pages:</strong> <span id="modalBookPages"></span></p>
+            </div>
+            <h3>About This Book</h3>
+            <p id="modalBookDescription"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+    <script>
+      const books = [
+        {
+          title: "This Is Why You Dream",
+          author: "Rahul Jandial",
+          price: "R295.00",
+          image: "images/this-is-why-you-dream.jpg",
+          pages: 368,
+          format: "Hardcover",
+          description: "Neuroscientist and sleep researcher Rahul Jandial explores the fascinating world of dreams. This book delves into the latest scientific research on why we dream, what dreams reveal about our brains, and how understanding our dreams can improve our mental health and well-being."
+        },
+        {
+          title: "Enter Ghost",
+          author: "Isabella Hammad",
+          price: "R275.00",
+          image: "images/enter-ghost.jpg",
+          pages: 432,
+          format: "Paperback",
+          description: "A captivating literary fiction that weaves together stories of displacement, identity, and art. Isabella Hammad's debut novel follows characters caught between cultures and time, exploring themes of belonging and the search for meaning in a complex world."
+        },
+        {
+          title: "Dr. of Hearts",
+          author: "Judy Dlamini, Kopano Matiwa Mabaso",
+          price: "R372.00",
+          image: "images/dr-of-hearts-scaled.jpg",
+          pages: 256,
+          format: "Hardcover",
+          description: "A powerful collaboration that explores the intersection of healthcare, humanity, and social justice. This book provides insights into medicine and compassion, examining what it truly means to care for others in challenging circumstances."
+        },
+        {
+          title: "The Splendid Tapestry of African Life",
+          author: "Adekeye Adebajo",
+          price: "R430.00",
+          image: "images/SPLENDID-TAPESTRY-HR.jpg",
+          pages: 528,
+          format: "Hardcover",
+          description: "A comprehensive and eloquent exploration of African history, culture, and politics. Adebajo weaves together diverse narratives and perspectives to paint a vivid picture of the African continent's rich heritage and contemporary challenges."
+        },
+        {
+          title: "Alphabet of Affirmations",
+          author: "Nyasha Williams",
+          price: "R210.00",
+          image: "images/sa-alphabet-of-affirmations.jpg",
+          pages: 224,
+          format: "Hardcover",
+          description: "An inspirational guide featuring affirmations for self-love, empowerment, and personal growth. This beautifully illustrated book provides daily affirmations and reflections designed to help readers build confidence and cultivate a positive mindset."
+        },
+        {
+          title: "Great Tales of Wild Swimming",
+          author: "Matthew & Serai Dowling",
+          price: "R475.00",
+          image: "images/gt-wild-swimming.jpg",
+          pages: 352,
+          format: "Hardcover",
+          description: "A breathtaking collection of true stories and adventures in wild swimming locations around the world. From hidden lakes to remote waterfalls, this book celebrates the freedom, beauty, and exhilaration of swimming in nature's most spectacular settings."
+        },
+        {
+          title: "Crossroads",
+          author: "André Trantraal, Ashley Marais, Koni Benson, Nathan Trantraal",
+          price: "R280.00",
+          image: "images/crossroads.jpg",
+          pages: 288,
+          format: "Paperback",
+          description: "A compelling anthology bringing together diverse voices and perspectives. This collection of essays and narratives examines critical moments and choices that shape individual lives and society, offering profound insights into the human experience."
+        },
+        {
+          title: "White Supremacy",
+          author: "Gavin Evans",
+          price: "R295.00",
+          image: "images/white-supremacy.jpg",
+          pages: 416,
+          format: "Paperback",
+          description: "A critical analysis of white supremacy as an ideology and its impact on society. Evans provides historical context and contemporary examples while exploring how racism is perpetuated and how we can work toward a more equitable future."
+        },
+        {
+          title: "Palestine in My Heart",
+          author: "Pitika Ntuli",
+          price: "R235.00",
+          image: "images/palestine-in-my-heart.jpg",
+          pages: 192,
+          format: "Paperback",
+          description: "A personal and poignant account that connects the author's own experiences of struggle and displacement with the Palestinian experience. This book offers a humanitarian perspective on a complex global issue through intimate and heartfelt storytelling."
+        },
+        {
+          title:"Ndibhala Intando Yam",
+          author:"Steve Biko",
+          price:"R290.00",
+          image:"images/ndibhala-intando-yam.jpg",
+          pages: 272,
+          format: "Paperback",
+          description:"After years in the making, the iconic I Write What I Like has been translated into isiXhosa. Ndibhala Intando Yam features the writing of the famous activist and Black Consciousness leader, Steve Biko."
+        },
+        {
+          title:"Long Walk to Freedom",
+          author:"Nelson Mandela",
+          price:"R215.00",
+          image:"images/long-walk-to-freedom.jpg",          pages: 624,
+          format: "Paperback",          description:"The riveting memoirs of the outstanding moral and political leader of our time: Nelson Mandela.Long Walk to Freedom chronicles Nelson Mandela’s journey from his early life to becoming South Africa’s first Black president, highlighting his fight against apartheid, imprisonment, and dedication to equality and justice."
+        },
+        {
+          title:"Alexandra: A Backstory",
+          author:"Solam Mkhabela",
+          price:"R280.00",
+          image:"images/alexandra.jpg",
+          pages: 320,
+          format: "Hardcover",
+          description:"Alexandra: A Backstory is a powerful graphic novel that uncovers the hidden history of Alexandra Township, a vibrant and resilient community nestled in Johannesburg."
+        },
+        
+      ];
+
+      function openBookModal(bookIndex) {
+        const book = books[bookIndex];
+        document.getElementById('modalBookImage').src = book.image;
+        document.getElementById('modalBookTitle').textContent = book.title;
+        document.getElementById('modalBookAuthor').textContent = book.author;
+        document.getElementById('modalBookPrice').textContent = book.price;
+        document.getElementById('modalBookPages').textContent = book.pages + ' pages';
+        document.getElementById('modalBookFormat').textContent = book.format;
+        document.getElementById('modalBookDescription').textContent = book.description;
+        
+        document.getElementById('bookModal').style.display = 'block';
+      }
+
+      function closeBookModal() {
+        document.getElementById('bookModal').style.display = 'none';
+      }
+
+      window.onclick = function(event) {
+        const modal = document.getElementById('bookModal');
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      }
+    </script>
+
+   <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-logo-section">
+                <img src="Logo.jpg" alt="The Book Lounge Logo">
+                <p class="footer-tagline">Cape Town's cozy independent bookstore</p>
+            </div>
+
+            <div class="footer-main-content">
+                <div class="footer-section">
+                    <h5><i class="fas fa-map-marker-alt"></i> Location</h5>
+                    <p>71 Roeland Street<br>Cape Town, South Africa</p>
+                </div>
+
+                <div class="footer-section">
+                    <h5><i class="fas fa-clock"></i> Hours</h5>
+                    <ul>
+                        <li>Mon - Fri: 09h00 - 18h00</li>
+                        <li>Saturday: 09h00 - 16h00</li>
+                        <li>Sunday: 10h00 - 16h00</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h5><i class="fas fa-share-alt"></i> Follow Us</h5>
+                    <div class="social-links">
+                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://wa.me/0711049647" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Book Lounge. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+  </body>
+</html>
+
+
