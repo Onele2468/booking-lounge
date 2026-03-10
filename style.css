@@ -4,7 +4,7 @@ body {
     color: #332d2d;
     line-height: 1.6;
     margin: 0;
-    padding: 0;
+    padding: 80px 0 0 0;
 }
 
 header {
@@ -34,6 +34,7 @@ nav {
     gap: 18px;
     margin: 0;
     padding: 0;
+
 }
 
 .nav-links li a {
@@ -121,7 +122,7 @@ h1, h2, h3 {
 
 .about-hero {
     text-align: left;
-    padding: 28px 16px;
+    padding: 2px 12px;
     background: linear-gradient(180deg, rgba(92,64,51,0.03), transparent 60%);
     border-radius: 6px;
 }
@@ -182,6 +183,18 @@ h1, h2, h3 {
     align-items: start;
     a {color:white; text-decoration:none; font-weight:600; cursor: pointer;}
 }
+
+.social-media{
+    font-size: 40px;
+    
+}
+.social-media .fa-brands.fa-whatsapp{
+    color: #4fd42a;
+}
+.social-media .fa-solid.fa-envelope{
+    color: #415eb3;
+}
+
 
 .contact-form {
     background: #fff;
@@ -285,15 +298,6 @@ iframe{
     text-align: center;
     text-decoration: none;
     display: inline-block;
-}
-
-
-.icon{font-size: 20px;}.fa-brands.fa-whatsapp{
-   font-size: 40px;
-   color: #25D366;
-}
-.icon{
-    display: flex;
 }
 
 .whatsapp-btn:hover {
@@ -1330,6 +1334,7 @@ img {
     html,
     body {
         overflow-x: hidden;
+        padding-top: 0;
     }
 
     header {
@@ -1522,6 +1527,7 @@ img {
         font-size: 0.82rem;
         padding: 8px 10px;
     }
+    
 
     .search-form input[type="text"],
     .search-form button {
@@ -1535,6 +1541,10 @@ img {
 
     .search-form button {
         width: 100%;
+    }
+
+    .search-form input[type="text"] {
+        min-width: 0;
     }
 
     h1 {
