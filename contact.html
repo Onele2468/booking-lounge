@@ -12,11 +12,10 @@
 <body>
     <header>
         <nav class="navbar">
-            <h2 class="logo">Book Lounge</h2>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="product.html">Products</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="About.html">About</a></li>
                 <li><a href="return.html">Returns</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
@@ -36,51 +35,18 @@
                 <p>Have a question about a book? Send us a message We'd love to hear from you! Whether you have questions about our books, policies, or want to share feedback, please get in touch or reach out via email or phone.</p>
             </div>
 
-            <div class="contact-layout">
-                <form class="contact-form" id="contactForm">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                    
-                    <button type="submit"><a href="mailto:info@thebooklounge.com">Send Email</a></button>
-                </form>
-                
-                <div class="whatsapp-box-form" id="whatsapp-section">
-                    <h3> Chat with us on WhatsApp</h3>
-                    <p>Fill in your details and send us a message directly on WhatsApp</p>
-                    <form id="whatsappBoxForm" class="whatsapp-form">
-                        <div class="form-group">
-                            <label for="whatsapp-name">Your Name </label>
-                            <input type="text" id="whatsapp-name" name="name" placeholder="Enter your name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="whatsapp-number">Your Number</label>
-                            <input type="text" id="whatsapp-number" name="whatsapp-number" placeholder="Enter your number" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="whatsapp-message">Your Message </label>
-                            <textarea id="whatsapp-message" name="whatsapp-message" placeholder="Type your message here" rows="5" required></textarea>
-                        </div>
-                        <div class="icon">
-                            <a href="https://wa.me/+27711049647?text=Hi%20The%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20would%20like%20to%20know%20more!" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                        </div>
-                    </form>
-                </div>
-            </div>
                               
 
             <aside class="contact-info-alt">
-                <h4 style="text-align:center;">Get in Touch</h4>
+                <h4>Get in Touch</h4>
                 <p><strong>Email:</strong> info@thebooklounge.com</p>
+                <div class="icon">
+                        <a href="https://wa.me/+27711049647?text=Hi There%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20I%20would%20like%20to%20know%20more!" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+                        </div>
                 <p><strong>Phone:</strong> 021 462 2425</p>
                 <p><strong>Address:</strong> 71 Roeland Street, Cape Town City Centre, 8001</p>
                 
-                <h4 style="text-align:center; margin-top: 20px;">Business Hours</h4>
+                <h4 class="contact-info-alt-h4">Business Hours</h4>
                 <p><strong>Monday - Friday:</strong> 09h00 - 18h00</p>
                 <p><strong>Saturday:</strong> 09h00 - 16h00</p>
                 <p><strong>Sunday:</strong> 10h00 - 16h00</p>
@@ -94,7 +60,7 @@
 
                 <div class="location-container">
                     <div class="map-wrapper">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3313.0235853677596!2d18.41976!3d-33.92541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1dcc67e2f3f3f3f3%3A0x1234567890abcdef!2s71%20Roeland%20St%2C%20Cape%20Town%2C%208001!5e0!3m2!1sen!2sza!4v1234567890" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.example.com" referrerpolicy="no-referrer" title="Example Frame"></iframe>
                     </div>
 
                     <div class="directions-info">
@@ -109,12 +75,12 @@
                             </p>
 
                             <div class="directions-buttons">
-                                <a href="https://www.google.com/maps/dir/?api=1&destination=71+Roeland+Street,Cape+Town,8001" target="_blank" class="direction-btn google-maps">
-                                    <i class="fas fa-directions"></i> Google Maps
-                                </a>
-                                <a href="https://maps.apple.com/?address=71%20Roeland%20Street,%20Cape%20Town,%208001,%20South%20Africa" target="_blank" class="direction-btn apple-maps">
-                                    <i class="fas fa-map"></i> Apple Maps
-                                </a>
+                               <a href="https://www.google.com/maps/dir/?api=1&destination=71+Roeland+Street,Cape+Town,8001" target="_blank" class="direction-btn google-maps" rel="noopener">
+                                <i class="fas fa-directions"></i> Google Maps</a>
+
+
+                                <a href="https://maps.apple.com/?address=71 Roeland Street, Cape Town, 8001, South Africa" target="_blank" class="direction-btn apple-maps" rel="noopener">
+                                <i class="fas fa-map"></i> Apple Maps</a>
                             </div>
                         </div>
 
@@ -133,7 +99,6 @@
         </section>
 
     </main>
-
 
 
 
@@ -162,10 +127,10 @@
                 <div class="footer-section">
                     <h5><i class="fas fa-share-alt"></i> Follow Us</h5>
                     <div class="social-links">
-                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://wa.me/+27711049647?text=Hi%20The%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20would%20like%20to%20know%20more!" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://wa.me/0711049647" target="_blank" title="WhatsApp" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
             </div>
@@ -177,6 +142,7 @@
             <p>&copy; 2026 The Book Lounge. All rights reserved.</p>
             <p><a href="privacy-policy.html">Privacy Policy</a></p>
         </div>
+
     </footer>
 
 
