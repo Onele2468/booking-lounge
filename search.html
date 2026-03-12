@@ -17,6 +17,7 @@
                 <li><a href="About.html">About</a></li>
                 <li><a href="return.html">Returns</a></li>
                 <li><a href="contact.html">Contact</a></li>
+				<li><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
             <div class="search-container">
                 <form action="search.html" method="get" class="search-form">
@@ -36,7 +37,72 @@
 
     
 
-    <script>
+
+
+    <div id="bookModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeBookModal()">&times;</span>
+        <div class="modal-body">
+          <div class="modal-left">
+            <img id="modalBookImage" src="" alt="Book Cover">
+          </div>
+          <div class="modal-right">
+            <h2 id="modalBookTitle"></h2>
+            <p class="modal-author">by <span id="modalBookAuthor"></span></p>
+            <p class="modal-price" id="modalBookPrice"></p>
+            <div class="book-details">
+              <p><strong>Format:</strong> <span id="modalBookFormat"></span></p>
+              <p><strong>Pages:</strong> <span id="modalBookPages"></span></p>
+            </div>
+            <h3>About This Book</h3>
+            <p id="modalBookDescription"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+<footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-logo-section">
+                <img src="Logo.jpg" alt="The Book Lounge Logo">
+                <p class="footer-tagline">Cape Town's cozy independent bookstore</p>
+            </div>
+
+            <div class="footer-main-content">
+                <div class="footer-section">
+                    <h5><i class="fas fa-map-marker-alt"></i> Location</h5>
+                    <p>71 Roeland Street<br>Cape Town, South Africa</p>
+                </div>
+
+                <div class="footer-section">
+                    <h5><i class="fas fa-clock"></i> Hours</h5>
+                    <ul>
+                        <li>Mon - Fri: 09h00 - 18h00</li>
+                        <li>Saturday: 09h00 - 16h00</li>
+                        <li>Sunday: 10h00 - 16h00</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h5><i class="fas fa-share-alt"></i> Follow Us</h5>
+                    <div class="social-links">
+                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://wa.me/+27711049647?text=Hi There%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20I%20would%20like%20to%20know%20more!" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 The Book Lounge. All rights reserved.</p>
+            <p><a href="privacy-policy.html">Privacy Policy</a></p>
+        </div>
+
+    </footer>
+        <script>
         const books = [
             { title: "This Is Why You Dream", author: "Rahul Jandial", price: "R295.00", image: "images/this-is-why-you-dream.jpg", description: "Neuroscientist and sleep researcher Rahul Jandial explores the fascinating world of dreams. This book delves into the latest scientific research on why we dream, what dreams reveal about our brains, and how understanding our dreams can improve our mental health and well-being." },
             { title: "Enter Ghost", author: "Isabella Hammad", price: "R275.00", image: "images/enter-ghost.jpg", description: "A captivating literary fiction that weaves together stories of displacement, identity, and art. Isabella Hammad's debut novel follows characters caught between cultures and time, exploring themes of belonging and the search for meaning in a complex world." },
@@ -59,6 +125,15 @@
             {title:"Ndibhala Intando Yam",author:"Steve Biko",price:"R290.00",image:"images/ndibhala-intando-yam.jpg", description:"After years in the making, the iconic I Write What I Like has been translated into isiXhosa. Ndibhala Intando Yam features the writing of the famous activist and Black Consciousness leader, Steve Biko."},
             {title:"Long Walk to Freedom",author:"Nelson Mandela",price:"R215.00",image:"images/long-walk-to-freedom.jpg",description:"The riveting memoirs of the outstanding moral and political leader of our time: Nelson Mandela.Long Walk to Freedom chronicles Nelson Mandela’s journey from his early life to becoming South Africa’s first Black president, highlighting his fight against apartheid, imprisonment, and dedication to equality and justice."},
             {title:"Alexandra: A Backstory",author:"Solam Mkhabela",price:"R280.00",image:"images/alexandra.jpg",description:"Alexandra: A Backstory is a powerful graphic novel that uncovers the hidden history of Alexandra Township, a vibrant and resilient community nestled in Johannesburg."},
+            { title: "The Bookshop Woman", author: "Nanako Hanada", price: "R305.00", image: "images/the-bookshop.jpg", pages: 228, format: "Paperback", description:"The Bookshop Woman offers a glimpse into the quirky side of Tokyo in this story about the beauty of free diving into a book and resurfacing on the last page, ready to breathe a different kind of air.<br><br>Nanako Hanada’s life has hit rock bottom. Separated from her husband, she’s living between 4-hour capsule hostels and pokey internet cafes in Tokyo. Work is going no better as sales at her eccentric bookstore dwindle. Reading is the only thing keeping her alive. She has to find a way to get out of this life of loneliness and despair. She has to find a way to get out of this life of loneliness and despair." },
+            { title: "Chasing Hope", author: "Nicholas D. Kristof", price: "R455.00", image: "images/chasing-hope.jpg", pages: 448, format: "Paperback", description: "Reporting from Hong Kong, Beijing, and Tokyo, and traveling far afield to India, Africa, and Europe, Kristof witnessed and wrote about century-defining events: the Tiananmen Square protests and massacre, the Yemeni civil war, the Darfur genocide in Sudan, and the wave of addiction and despair that swept through his own town and a broad swath of working-class America. Fully aware that coverage of atrocities generates considerably fewer page views than the coverage of politics, he nevertheless continued to weaponize his pen against regimes and groups violating basic human rights, raising the cost of oppression and torture. Some of the risks he took while doing so make for hair-raising reading.<br><br>Kristof introduces us to extraordinary people he has met, such as dissident he helped escape from China and a Catholic nun who browbeat a warlord into releasing schoolgirls he had kidnapped. These are the people, the heroes, who have allowed Kristof to remain optimistic. Side by side with the worst of humanity, Kristof shows us the best." },
+            { title: "Book of Lives", author: "Margaret Atwood", price: "R800.0" , image:"images/book-of-lives.jpg", pages:"624", format:"Hardcover", description:"From this unconventional start, Atwood unfolds the story of her life, linking key moments to the books that have shaped our literary landscape, from the cruel school year that would become Cat’s Eye to the unease of 1980s Berlin, where she began The Handmaid’s Tale. In pages alive with the natural world, reading and books, major political turning points and her lifelong love for the charismatic writer Graeme Gibson, we meet poets, bears, Hollywood stars and larger-than-life characters straight from the pages of an Atwood novel."},
+            { title: "Fires Which Burned Brightly", author: "Sebastian Faulks", price: "R535.00", image: "images/fires.jpg", pages: 352, format: "Hardcove", description: "In Fires Which Burned Brightly, Faulks, a reluctant memoirist, offers readers a series of detailed snapshots from a life in progress. They include a post-war rural childhood – ‘cold mutton and wet washing on a rack over the range’ – the booze-sodden heyday of Fleet Street and a career as one of the country’s most acclaimed novelists.<br><br>There are not one, but two daring escapes from boarding school; the delirium of a jetlagged American book tour; the writing of Birdsong in his brother’s house in 1992; and memorable trips across the channel to France. Politics, psychiatry and frustrated ventures into the world of entertainment are analysed with patience and rueful humour."},
+            { title: "American Teenager", author: "Nico Lang", price: "R450.00", image: "images/American-teenager.jpg", pages: 304, format: "Paperback", description: "Media coverage tends to sensationalize the fight over how trans kids should be allowed to live, but what is incredibly rare are the voices of the people at the heart of this debate: transgender and gender nonconforming kids themselves."},
+            { title: "Finding My Way", author: "Malala Yousafzai", price: "R470.00", image: "images/finding-my-way.jpg", pages: 320, format: "Paperback", description: "Thrust onto the public stage at fifteen years old after the Taliban’s brutal attack on her life, Malala quickly became an international icon known for bravery and resilience. But away from the cameras and crowds, she spent years struggling to find her place in an unfamiliar world. Now, for the first time ever, Malala takes readers beyond the headlines in Finding My Way – a vulnerable, surprising memoir that buzzes with authenticity, sharp humour and tenderness."},
+            { title: "Always Another Country", author: "Sisonke Msimang", price: "R280.00", image: "images/always-another-country.jpg", pages: 352, format: "Paperback", description: "As a child of parents exiled by the apartheid policies of her father’s South African homeland, Sisonke Msimang grew up hearing of how things would change when apartheid fell. Her beautifully written memoir describes how not only did this take much longer than her parents expected, but also how the journey deposited her in Minnesota for four years. She unflinchingly describes the good and the bad—including how the dream of South Africa has not turned out quite as she hoped.<br><br>Born in exile, in Zambia, to a guerrilla father and a working mother, Sisonke Msimang is constantly on the move. Her parents, talented and highly educated, travel from Zambia to Kenya and Canada and beyond with their young family. Always the outsider, and against a backdrop of racism and xenophobia, Sisonke develops her keenly perceptive view of the world. In this sparkling account of a young girl’s path to womanhood, Sisonke interweaves her personal story with her political awakening in America and Africa, her euphoria at returning to the new South Africa, and her disillusionment with the new elites. Confidential and reflective, Always Another Country is a search for belonging and identity: a warm and intimate story, and a testament to sisterhood and family bonds."},
+            { title: "Improving the State Capacity in South Africa", author: "Noluthando Matsiliza", price: "R287.00", image: "images/improving-state.jpg", pages: 227, format: "Paperback", description: "This volume provides a critical examination of state capacity and the governance processes that shape public policy and service delivery in South Africa. Through a series of theoretically informed and empirically grounded chapters, it interrogates the performance of the state from the Mandela era to the Ramaphosa administration, drawing attention to both the persistent weaknesses and the attempts at reform.<br><br>Contributors address a wide range of issues, including the politics of memory, the dynamics of coalition governments, the role of social policy in poverty alleviation, corporate governance, ethical leadership, environmental sustainability, and the challenges posed by the Fourth Industrial Revolution. Comparative perspectives from South Africa and other African contexts illuminate the complexities of building and sustaining a capable state in the twenty-first century. By situating debates on governance within broader discourses of development, accountability, and institutional resilience, this book advances new propositions for strengthening state capacity in the post-2024 period. It offers a sober assessment of the trials and errors of policy implementation, while also outlining feasible strategies for future reform."},
+        
         ]
 
         function getSearchQuery() {
@@ -138,70 +213,7 @@
         }
     </script>
 
-    <div id="bookModal" class="modal">
-      <div class="modal-content">
-        <span class="close" onclick="closeBookModal()">&times;</span>
-        <div class="modal-body">
-          <div class="modal-left">
-            <img id="modalBookImage" src="" alt="Book Cover">
-          </div>
-          <div class="modal-right">
-            <h2 id="modalBookTitle"></h2>
-            <p class="modal-author">by <span id="modalBookAuthor"></span></p>
-            <p class="modal-price" id="modalBookPrice"></p>
-            <div class="book-details">
-              <p><strong>Format:</strong> <span id="modalBookFormat"></span></p>
-              <p><strong>Pages:</strong> <span id="modalBookPages"></span></p>
-            </div>
-            <h3>About This Book</h3>
-            <p id="modalBookDescription"></p>
-          </div>
-        </div>
-      </div>
-    </div>
-<footer class="site-footer">
-        <div class="footer-top">
-            <div class="footer-logo-section">
-                <img src="Logo.jpg" alt="The Book Lounge Logo">
-                <p class="footer-tagline">Cape Town's cozy independent bookstore</p>
-            </div>
-
-            <div class="footer-main-content">
-                <div class="footer-section">
-                    <h5><i class="fas fa-map-marker-alt"></i> Location</h5>
-                    <p>71 Roeland Street<br>Cape Town, South Africa</p>
-                </div>
-
-                <div class="footer-section">
-                    <h5><i class="fas fa-clock"></i> Hours</h5>
-                    <ul>
-                        <li>Mon - Fri: 09h00 - 18h00</li>
-                        <li>Saturday: 09h00 - 16h00</li>
-                        <li>Sunday: 10h00 - 16h00</li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h5><i class="fas fa-share-alt"></i> Follow Us</h5>
-                    <div class="social-links">
-                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                        <a href="https://wa.me/+27711049647?text=Hi There%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20I%20would%20like%20to%20know%20more!" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 The Book Lounge. All rights reserved.</p>
-            <p><a href="privacy-policy.html">Privacy Policy</a></p>
-        </div>
-
-    </footer>
-
 
 </body>
 </html>
+

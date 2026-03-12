@@ -1,130 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Book keeping lounge</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Onele">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  </head>
-  <body>
-    <header>
-      <nav class="navbar">
-        <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="product.html">Products</a></li>
-          <li><a href="About.html">About</a></li>
-          <li><a href="return.html">Returns</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-        <div class="search-container">
-          <form action="search.html" method="get" class="search-form">
-            <input type="text" name="query" placeholder="Search by title or author" required>
-            <button type="submit">Search</button>
-          </form>
-        </div>
-      </nav>
-    </header>
 
-    <main>
-      <section id="products">
-        <h2>Our Products</h2>
-        <p>We offer a wide range of books including fiction, non-fiction, children's books, and more. We also host literary events and have a cozy café area for our customers to enjoy.</p>
-      </section>
+<head>
+  <title>Book Keeping Lounge</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Onele">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
 
-      <section class="intro">
-        <h2>Welcome to The Book Lounge</h2>
-        <p>Discover a world of literature at The Book Lounge, Cape Town's beloved independent bookstore. We offer a curated selection of books, host engaging literary events, and provide a cozy café space for book lovers to connect and unwind.</p>
-      </section>
+<body>
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="product.html">Products</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="return.html">Returns</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+      </ul>
+      <div class="search-container">
+        <form action="search.html" method="get" class="search-form">
+          <input type="text" name="query" placeholder="Search by title or author" required>
+          <button type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="search-text">Search</span>
+          </button>
+        </form>
+      </div>
+    </nav>
+  </header>
 
+  <main>
+    <section id="products">
+      <h2>Our Products</h2>
+      <p>We offer a wide range of books including fiction, non-fiction, children's books, and more. We also host
+        literary events and have a cozy café area for our customers to enjoy.</p>
+    </section>
+
+    <section class="intro">
+      <h2>Welcome to The Book Lounge</h2>
+      <p>Discover a world of literature at The Book Lounge, Cape Town's beloved independent bookstore. We offer a
+        curated selection of books, host engaging literary events, and provide a cozy café space for book lovers to
+        connect and unwind.</p>
+    </section>
 
     <section class="featured">
       <h2>Featured Books</h2>
       <div class="product-grid">
 
-        <div class="product-item" onclick="openBookModal(0)">
+        <!-- Book 0 - Out of Stock -->
+        <div class="product-item">
           <img src="images/this-is-why-you-dream.jpg" alt="This Is Why You Dream">
           <h3>This Is Why You Dream</h3>
           <p class="author">Rahul Jandial</p>
           <p class="price">R295.00</p>
           <p class="p-out-of-stock">Out of Stock</p>
-          <p class="p-out-of-stock">Out of Stock</p>
         </div>
+
+        <!-- Book 1 -->
         <div class="product-item" onclick="openBookModal(1)">
           <img src="images/enter-ghost.jpg" alt="Enter Ghost">
           <h3>Enter Ghost</h3>
           <p class="author">Isabella Hammad</p>
           <p class="price">R275.00</p>
         </div>
-        <div class="product-item" onclick="openBookModal(2)">
+
+        <!-- Book 2 - Out of Stock -->
+        <div class="product-item">
           <img src="images/dr-of-hearts-scaled.jpg" alt="Dr. of Hearts">
           <h3>Dr. of Hearts</h3>
           <p class="author">Judy Dlamini, Kopano Matiwa Mabaso</p>
           <p class="price">R372.00</p>
           <p class="p-out-of-stock">Out of Stock</p>
         </div>
+
+        <!-- Book 3 -->
         <div class="product-item" onclick="openBookModal(3)">
           <img src="images/SPLENDID-TAPESTRY-HR.jpg" alt="The Splendid Tapestry of African Life">
           <h3>The Splendid Tapestry of African Life</h3>
           <p class="author">Adekeye Adebajo</p>
           <p class="price">R430.00</p>
         </div>
-        <div class="product-item" onclick="openBookModal(4)">
+
+        <!-- Book 4 - Out of Stock -->
+        <div class="product-item">
           <img src="images/sa-alphabet-of-affirmations.jpg" alt="Alphabet of Affirmations">
           <h3>Alphabet of Affirmations</h3>
           <p class="author">Nyasha Williams</p>
           <p class="price">R210.00</p>
           <p class="p-out-of-stock">Out of Stock</p>
         </div>
-        <div class="product-item" onclick="openBookModal(5)">
+
+        <!-- Book 5 - Out of Stock -->
+        <div class="product-item">
           <img src="images/gt-wild-swimming.jpg" alt="Great Tales of Wild Swimming">
           <h3>Great Tales of Wild Swimming</h3>
           <p class="author">Matthew & Serai Dowling</p>
           <p class="price">R475.00</p>
-          <p class="p-out-of-stock">Out of Stock</p>
+          <p class="p-out-of-stock">Out of Stock</p>  
         </div>
+
+        <!-- Book 6 -->
         <div class="product-item" onclick="openBookModal(6)">
           <img src="images/crossroads.jpg" alt="Crossroads">
           <h3>Crossroads</h3>
           <p class="author">André Trantraal, Ashley Marais, Koni Benson, Nathan Trantraal</p>
           <p class="price">R280.00</p>
         </div>
-        <div class="product-item" onclick="openBookModal(7)">
+
+        <!-- Book 7 - Out of Stock -->
+        <div class="product-item">
           <img src="images/white-supremacy.jpg" alt="White Supremacy">
           <h3>White Supremacy</h3>
           <p class="author">Gavin Evans</p>
           <p class="price">R295.00</p>
+          <p class="p-out-of-stock">Out of Stock</p>  
+        </div>
+
+        <!-- Book 8 - Out of Stock -->
+        <div class="product-item">
+          <div>
+            <img src="images/palestine-in-my-heart.jpg" alt="Palestine in My Heart">
+            <h3>Palestine in My Heart</h3>
+            <p class="author">Pitika Ntuli</p>
+            <p class="price">R235.00</p>
+            <p>Out of Stock</p>
+          </div>
           <p class="p-out-of-stock">Out of Stock</p>
         </div>
-        <div class="product-item" onclick="openBookModal(8)">
-          <img src="images/palestine-in-my-heart.jpg" alt="Palestine in My Heart">
-          <h3>Palestine in My Heart</h3>
-          <p class="author">Pitika Ntuli</p>
-          <p class="price">R235.00</p>
-          <p class="p-out-of-stock">Out of Stock</p>
-        </div>
+
+        <!-- Book 9 -->
         <div class="product-item" onclick="openBookModal(9)">
           <img src="images/ndibhala-intando-yam.jpg" alt="Ndibhala Intando Yam">
           <h3>Ndibhala Intando Yam</h3>
-          <p class="Author">Steve Biko</p>
-          <p class="Price">R290.00</p>
+          <p class="author">Steve Biko</p>
+          <p class="price">R290.00</p>
         </div>
+
+        <!-- Book 10 -->
         <div class="product-item" onclick="openBookModal(10)">
-          <img src="images/long-walk-to-freedom.jpg" alt="Long Walk to Freedom;">
+          <img src="images/long-walk-to-freedom.jpg" alt="Long Walk to Freedom">
           <h3>Long Walk to Freedom</h3>
-          <p class="Author">Nelson Mandela</p>
-          <p class="Price">R415.00</p>
+          <p class="author">Nelson Mandela</p>
+          <p class="price">R215.00</p>
         </div>
+
+        <!-- Book 11 -->
         <div class="product-item" onclick="openBookModal(11)">
           <img src="images/alexandra.jpg" alt="Alexandra: A Backstory">
           <h3>Alexandra: A Backstory</h3>
-          <p class="Author">Solam Mkhabela</p>
-          <p class="Price">R280.00</p>
-        </div> 
+          <p class="author">Solam Mkhabela</p>
+          <p class="price">R280.00</p>
+        </div>
+
+        <!-- Book 12 -->
+        <div class="product-item" onclick="openBookModal(12)">
+          <img src="images/the-bookshop.jpg" alt="The Bookshop Woman">
+          <h3>The Bookshop Woman</h3>
+          <p class="author">Nanako Hanada</p>
+          <p class="price">R305.00</p>
+        </div>
+
+        <!-- Book 13 -->
+        <div class="product-item" onclick="openBookModal(13)">
+          <img src="images/chasing-hope.jpg" alt="Chasing Hope">
+          <h3>Chasing Hope</h3>
+          <p class="author">Nicholas D. Kristof</p>
+          <p class="price">R455.00</p>
+        </div>
+
+        <!-- Book 14 -->
+        <div class="product-item" onclick="openBookModal(14)">
+          <img src="images/book-of-lives.jpg" alt="Book of Lives">
+          <h3>Book of Lives</h3>
+          <p class="author">Margaret Atwood</p>
+          <p class="price">R800.00</p>
+        </div>
+
+        <!-- Book 15 -->
+        <div class="product-item" onclick="openBookModal(15)">
+          <img src="images/fires.jpg" alt="Fires Which Burned Brightly">
+          <h3>Fires Which Burned Brightly</h3>
+          <p class="author">Sebastian Faulks</p>
+          <p class="price">R535.00</p>
+        </div>
+
+        <!-- Book 16 -->
+        <div class="product-item" onclick="openBookModal(16)">
+          <img src="images/American-teenager.jpg" alt="American Teenager">
+          <h3>American Teenager</h3>
+          <p class="author">Nico Lang</p>
+          <p class="price">R450.00</p>
+        </div>
+
+        <!-- Book 17 -->
+        <div class="product-item" onclick="openBookModal(17)">
+          <img src="images/finding-my-way.jpg" alt="Finding My Way">
+          <h3>Finding My Way</h3>
+          <p class="author">Malala Yousafzai</p>
+          <p class="price">R470.00</p>
+        </div>
+
+        <!-- Book 18 -->
+        <div class="product-item" onclick="openBookModal(17)">
+          <img src="images/always-another-country.jpg" alt="Always Another Country">
+          <h3>Always Another Country</h3>
+          <p class="author">Sisonke Msimang</p>
+          <p class="price">R280.00</p>
+        </div>
+
+        <!-- Book 19 -->
+        <div class="product-item" onclick="openBookModal(17)">
+          <img src="images/improving-state.jpg" alt="Improving the State Capacity in South Africa">
+          <h3>Improving the State Capacity in South Africa</h3>
+          <p class="author">Noluthando Matsiliza</p>
+          <p class="price">R287.00</p>
+        </div>
       </div>
+
+
     </section>
 
+    <!-- Cart Section -->
+
+
+    <!-- Book Modal -->
     <div id="bookModal" class="modal">
       <div class="modal-content">
         <span class="close" onclick="closeBookModal()">&times;</span>
@@ -142,191 +245,165 @@
             </div>
             <h3>About This Book</h3>
             <p id="modalBookDescription"></p>
+
+          </div>
+        </div>
+      </div>
+
+  </main>
+
+  <script src="books.js"></script>
+  <script>
+
+/**
+ * Opens the book modal with the given book details
+ * @param {number} index - the index of the book in the books array
+ */
+    function openBookModal(index) {
+      const book = books[index];
+      document.getElementById('modalBookImage').src = book.image;
+      document.getElementById('modalBookTitle').textContent = book.title;
+      document.getElementById('modalBookAuthor').textContent = book.author;
+      document.getElementById('modalBookPrice').textContent = book.price;
+      document.getElementById('modalBookPages').textContent = book.pages + " pages";
+      document.getElementById('modalBookFormat').textContent = book.format;
+      document.getElementById('modalBookDescription').textContent = book.description;
+
+      document.getElementById('bookModal').style.display = "block";
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeBookModal() {
+      document.getElementById('bookModal').style.display = 'none';
+      document.body.style.overflow = "auto";
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById('bookModal');
+      if (event.target === modal) {
+        closeBookModal();
+      }
+    };
+    // Cart button injection
+    document.addEventListener("DOMContentLoaded", () => {
+      const gridItems = document.querySelectorAll(".product-item");
+      gridItems.forEach(item => {
+        const onclickAttr = item.getAttribute("onclick");
+        if (onclickAttr && onclickAttr.includes("openBookModal")) {
+          const match = onclickAttr.match(/openBookModal\((\d+)\)/);
+          if (match) {
+            const bookIndex = parseInt(match[1], 10);
+            
+            const cartControls = document.createElement('div');
+            cartControls.className = 'cart-controls';
+            cartControls.style.marginTop = '10px';
+            cartControls.style.display = 'flex';
+            cartControls.style.gap = '8px';
+            cartControls.style.alignItems = 'center';
+
+            const qtyLabel = document.createElement('label');
+            qtyLabel.textContent = 'Quantity:';
+            qtyLabel.style.fontSize = '0.9rem';
+
+            const qtyInput = document.createElement('input');
+            qtyInput.type = 'number';
+            qtyInput.value = '1';
+            qtyInput.min = '1';
+            qtyInput.className = 'quantity-input';
+            qtyInput.style.width = '50px';
+            qtyInput.style.padding = '5px';
+            qtyInput.style.textAlign = 'center';
+            qtyInput.onclick = (e) => e.stopPropagation(); // Prevent modal from opening when clicking input
+
+            const btn = document.createElement("button");
+            btn.className = "add-to-cart-grid-btn";
+            btn.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Add`;
+            btn.style.flexGrow = '1';
+            btn.style.padding = "10px";
+            btn.style.backgroundColor = "#d4a373";
+            btn.style.color = "white";
+            btn.style.border = "none";
+            btn.style.borderRadius = "4px";
+            btn.style.cursor = "pointer";
+            btn.style.fontWeight = "bold";
+            btn.style.transition = "background-color 0.3s";
+
+            btn.onmouseover = () => btn.style.backgroundColor = "#5c4033";
+            btn.onmouseleave = () => btn.style.backgroundColor = "#d4a373";
+
+            btn.onclick = (e) => {
+              e.stopPropagation(); // prevent modal from opening
+              const quantity = parseInt(qtyInput.value);
+              addToCartFromGrid(bookIndex, quantity);
+            };
+
+            cartControls.appendChild(qtyLabel);
+            cartControls.appendChild(qtyInput);
+            cartControls.appendChild(btn);
+            item.appendChild(cartControls);
+          }
+        }
+      });
+    });
+
+    function addToCartFromGrid(index, quantity) {
+        if (quantity < 1) {
+            alert("Quantity must be at least 1");
+            return;
+        }
+      const book = books[index];
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      const existingIndex = cart.findIndex(item => item.index === index);
+      if (existingIndex !== -1) {
+        cart[existingIndex].quantity += quantity;
+      } else {
+        cart.push({ index: index, quantity: quantity });
+      }
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${quantity} x "${book.title}" added to cart!`);
+    }
+  </script>
+
+  <footer class="site-footer">
+    <div class="footer-top">
+      <div class="footer-logo-section">
+        <img src="Logo.jpg" alt="The Book Lounge Logo">
+        <p class="footer-tagline">Cape Town's cozy independent bookstore</p>
+      </div>
+      <div class="footer-main-content">
+        <div class="footer-section">
+          <h5><i class="fas fa-map-marker-alt"></i> Location</h5>
+          <p>71 Roeland Street<br>Cape Town, South Africa</p>
+        </div>
+        <div class="footer-section">
+          <h5><i class="fas fa-clock"></i> Hours</h5>
+          <ul>
+            <li>Mon - Fri: 09h00 - 18h00</li>
+            <li>Saturday: 09h00 - 16h00</li>
+            <li>Sunday: 10h00 - 16h00</li>
+          </ul>
+        </div>
+        <div class="footer-section">
+          <h5><i class="fas fa-share-alt"></i> Follow Us</h5>
+          <div class="social-links">
+            <a href="https://instagram.com/TheBookLounge" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-instagram"></i></a>
+            <a href="https://facebook.com/TheBookLounge" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/TheBookLounge" target="_blank" rel="noopener noreferrer"><i
+                class="fab fa-x-twitter"></i></a>
+            <a href="https://wa.me/+27711049647" target="_blank" rel="noopener"><i
+                class="fa-brands fa-whatsapp"></i></a>
           </div>
         </div>
       </div>
     </div>
-  </main>
+    <div class="footer-divider"></div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 The Book Lounge. All rights reserved.</p>
+      <p><a href="privacy-policy.html">Privacy Policy</a></p>
+    </div>
+  </footer>
+</body>
 
-    <script>
-      const books = [
-        {
-          title: "This Is Why You Dream",
-          author: "Rahul Jandial",
-          price: "R295.00",
-          image: "images/this-is-why-you-dream.jpg",
-          pages: 368,
-          format: "Hardcover",
-          description: "Neuroscientist and sleep researcher Rahul Jandial explores the fascinating world of dreams. This book delves into the latest scientific research on why we dream, what dreams reveal about our brains, and how understanding our dreams can improve our mental health and well-being."
-        },
-        {
-          title: "Enter Ghost",
-          author: "Isabella Hammad",
-          price: "R275.00",
-          image: "images/enter-ghost.jpg",
-          pages: 432,
-          format: "Paperback",
-          description: "A captivating literary fiction that weaves together stories of displacement, identity, and art. Isabella Hammad's debut novel follows characters caught between cultures and time, exploring themes of belonging and the search for meaning in a complex world."
-        },
-        {
-          title: "Dr. of Hearts",
-          author: "Judy Dlamini, Kopano Matiwa Mabaso",
-          price: "R372.00",
-          image: "images/dr-of-hearts-scaled.jpg",
-          pages: 256,
-          format: "Hardcover",
-          description: "A powerful collaboration that explores the intersection of healthcare, humanity, and social justice. This book provides insights into medicine and compassion, examining what it truly means to care for others in challenging circumstances."
-        },
-        {
-          title: "The Splendid Tapestry of African Life",
-          author: "Adekeye Adebajo",
-          price: "R430.00",
-          image: "images/SPLENDID-TAPESTRY-HR.jpg",
-          pages: 528,
-          format: "Hardcover",
-          description: "A comprehensive and eloquent exploration of African history, culture, and politics. Adebajo weaves together diverse narratives and perspectives to paint a vivid picture of the African continent's rich heritage and contemporary challenges."
-        },
-        {
-          title: "Alphabet of Affirmations",
-          author: "Nyasha Williams",
-          price: "R210.00",
-          image: "images/sa-alphabet-of-affirmations.jpg",
-          pages: 224,
-          format: "Hardcover",
-          description: "An inspirational guide featuring affirmations for self-love, empowerment, and personal growth. This beautifully illustrated book provides daily affirmations and reflections designed to help readers build confidence and cultivate a positive mindset."
-        },
-        {
-          title: "Great Tales of Wild Swimming",
-          author: "Matthew & Serai Dowling",
-          price: "R475.00",
-          image: "images/gt-wild-swimming.jpg",
-          pages: 352,
-          format: "Hardcover",
-          description: "A breathtaking collection of true stories and adventures in wild swimming locations around the world. From hidden lakes to remote waterfalls, this book celebrates the freedom, beauty, and exhilaration of swimming in nature's most spectacular settings."
-        },
-        {
-          title: "Crossroads",
-          author: "André Trantraal, Ashley Marais, Koni Benson, Nathan Trantraal",
-          price: "R280.00",
-          image: "images/crossroads.jpg",
-          pages: 288,
-          format: "Paperback",
-          description: "A compelling anthology bringing together diverse voices and perspectives. This collection of essays and narratives examines critical moments and choices that shape individual lives and society, offering profound insights into the human experience."
-        },
-        {
-          title: "White Supremacy",
-          author: "Gavin Evans",
-          price: "R295.00",
-          image: "images/white-supremacy.jpg",
-          pages: 416,
-          format: "Paperback",
-          description: "A critical analysis of white supremacy as an ideology and its impact on society. Evans provides historical context and contemporary examples while exploring how racism is perpetuated and how we can work toward a more equitable future."
-        },
-        {
-          title: "Palestine in My Heart",
-          author: "Pitika Ntuli",
-          price: "R235.00",
-          image: "images/palestine-in-my-heart.jpg",
-          pages: 192,
-          format: "Paperback",
-          description: "A personal and poignant account that connects the author's own experiences of struggle and displacement with the Palestinian experience. This book offers a humanitarian perspective on a complex global issue through intimate and heartfelt storytelling."
-        },
-        {
-          title:"Ndibhala Intando Yam",
-          author:"Steve Biko",
-          price:"R290.00",
-          image:"images/ndibhala-intando-yam.jpg",
-          pages: 272,
-          format: "Paperback",
-          description:"After years in the making, the iconic I Write What I Like has been translated into isiXhosa. Ndibhala Intando Yam features the writing of the famous activist and Black Consciousness leader, Steve Biko."
-        },
-        {
-          title:"Long Walk to Freedom",
-          author:"Nelson Mandela",
-          price:"R215.00",
-          image:"images/long-walk-to-freedom.jpg",          pages: 624,
-          format: "Paperback",          description:"The riveting memoirs of the outstanding moral and political leader of our time: Nelson Mandela.Long Walk to Freedom chronicles Nelson Mandela’s journey from his early life to becoming South Africa’s first Black president, highlighting his fight against apartheid, imprisonment, and dedication to equality and justice."
-        },
-        {
-          title:"Alexandra: A Backstory",
-          author:"Solam Mkhabela",
-          price:"R280.00",
-          image:"images/alexandra.jpg",
-          pages: 320,
-          format: "Hardcover",
-          description:"Alexandra: A Backstory is a powerful graphic novel that uncovers the hidden history of Alexandra Township, a vibrant and resilient community nestled in Johannesburg."
-        },
-        
-      ];
-
-      function openBookModal(bookIndex) {
-        const book = books[bookIndex];
-        document.getElementById('modalBookImage').src = book.image;
-        document.getElementById('modalBookTitle').textContent = book.title;
-        document.getElementById('modalBookAuthor').textContent = book.author;
-        document.getElementById('modalBookPrice').textContent = book.price;
-        document.getElementById('modalBookPages').textContent = book.pages + ' pages';
-        document.getElementById('modalBookFormat').textContent = book.format;
-        document.getElementById('modalBookDescription').textContent = book.description;
-        
-        document.getElementById('bookModal').style.display = 'block';
-      }
-
-      function closeBookModal() {
-        document.getElementById('bookModal').style.display = 'none';
-      }
-
-      window.onclick = function(event) {
-        const modal = document.getElementById('bookModal');
-        if (event.target === modal) {
-          modal.style.display = 'none';
-        }
-      }
-    </script>
-
-<footer class="site-footer">
-        <div class="footer-top">
-            <div class="footer-logo-section">
-                <img src="Logo.jpg" alt="The Book Lounge Logo">
-                <p class="footer-tagline">Cape Town's cozy independent bookstore</p>
-            </div>
-
-            <div class="footer-main-content">
-                <div class="footer-section">
-                    <h5><i class="fas fa-map-marker-alt"></i> Location</h5>
-                    <p>71 Roeland Street<br>Cape Town, South Africa</p>
-                </div>
-
-                <div class="footer-section">
-                    <h5><i class="fas fa-clock"></i> Hours</h5>
-                    <ul>
-                        <li>Mon - Fri: 09h00 - 18h00</li>
-                        <li>Saturday: 09h00 - 16h00</li>
-                        <li>Sunday: 10h00 - 16h00</li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h5><i class="fas fa-share-alt"></i> Follow Us</h5>
-                    <div class="social-links">
-                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
-                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook" rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
-                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter" rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
-                      <a href="https://wa.me/+27711049647?text=Hi There%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20I%20would%20like%20to%20know%20more!" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-divider"></div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 The Book Lounge. All rights reserved.</p>
-            <p><a href="privacy-policy.html">Privacy Policy</a></p>
-        </div>
-
-    </footer>
-  </body>
 </html>
-
-

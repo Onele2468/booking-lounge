@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>The Book Lounge</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Onele">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  </head>
+
+
+  <body>
+
+    <header>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="product.html">Products</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="return.html">Returns</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+        </ul>
+
+        <div class="search-container">
+          <form action="search.html" method="get" class="search-form">
+            <input type="text"name="query" placeholder="Search by title or author"required>
+            <button type="submit">Search</button>
+          </form>
+        </div>
+     </nav>
+    </header>
+
+
+
+    <main>
+      <h1>Your Shopping Cart</h1>
+        <div class="cart-container" id="cartContainer"></div>
+        <p class="cart-total" id="cartTotal">Total: R0.00</p>
+        <button id="clearCart">Clear Cart</button>
+      <h2>Customer Purchase Form</h2>
+        <form id="purchaseForm" class="payment-form">
+          <input type="text" id="customerName" placeholder="Full Name" required>
+          <input type="tel" id="customerPhone" placeholder="Phone Number" required>
+          <input type="email" id="customerEmail" placeholder="Email Address" required>
+          <textarea id="customerAddress" placeholder="Delivery Address" required></textarea>
+          <input type="text" id="customerBankAccount" placeholder="Bank Account Number" required>
+          <button type="submit" id="placeOrder">Place Order</button>
+        </form>
+    </main>
+
+
+
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="footer-logo-section">
+                <img src="Logo.jpg" alt="The Book Lounge Logo">
+                <p class="footer-tagline">Cape Town's cozy independent bookstore</p>
+            </div>
+
+            <div class="footer-main-content">
+                <div class="footer-section">
+                    <h5><i class="fas fa-map-marker-alt"></i> Location</h5>
+                    <p>71 Roeland Street<br>Cape Town, South Africa</p>
+                </div>
+
+                <div class="footer-section">
+                    <h5><i class="fas fa-clock"></i> Hours</h5>
+                    <ul>
+                        <li>Mon - Fri: 09h00 - 18h00</li>
+                        <li>Saturday: 09h00 - 16h00</li>
+                        <li>Sunday: 10h00 - 16h00</li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h5><i class="fas fa-share-alt"></i> Follow Us</h5>
+                    <div class="social-links">
+                        <a href="https://instagram.com/TheBookLounge" target="_blank" title="Instagram"
+                            rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
+                        <a href="https://facebook.com/TheBookLounge" target="_blank" title="Facebook"
+                            rel="noopener noreferrer"><i class="fab fa-facebook"></i></a>
+                        <a href="https://twitter.com/TheBookLounge" target="_blank" title="Twitter"
+                            rel="noopener noreferrer"><i class="fab fa-x-twitter"></i></a>
+                        <a href="https://wa.me/+27711049647?text=Hi There%20Booklounge,%20I'm%20interested%20in%20your%20books%20and%20I%20would%20like%20to%20know%20more!"
+                            target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+             <p>&copy; 2026 The Book Lounge. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+
+
+
+    <script src="books.js"></script>
+    <script>
+
+      const cartContainer = document.getElementById("cartContainer");
+      const cart = JSON.parse(localStorage.getItem("cart")) || [];
+      let total = 0;
+
+      if (cart.length === 0) {
+        cartContainer.innerHTML = "<p>Your cart is empty!</p>";
+      } else {
+        cart.forEach(item => {
+          const book = books[item.index];
+          const quantity = item.quantity;
+          const priceNumber = parseFloat(book.price.replace("R", ""));
+          const subtotal = priceNumber * quantity;
+          total += subtotal;
+
+          cartContainer.innerHTML += `
+            <div class="cart-item">
+              <img src="${book.image}" alt="${book.title}">
+              <div>
+                <h4>${book.title}</h4>
+                <p>Author: ${book.author}</p>
+                <p>Price: ${book.price}</p>
+                <p>Quantity: ${quantity}</p>
+                <p>Subtotal: R${subtotal.toFixed(2)}</p>
+              </div>
+            </div>
+          `;
+        });
+      }
+
+      document.getElementById("cartTotal").textContent = `Total: R${total.toFixed(2)}`;
+
+      document.getElementById("clearCart").addEventListener("click", () => {
+        localStorage.removeItem("cart");
+        location.reload();
+      });
+
+      document.getElementById("purchaseForm").addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const name = document.getElementById("customerName").value;
+        const phone = document.getElementById("customerPhone").value;
+        const email = document.getElementById("customerEmail").value;
+        const address = document.getElementById("customerAddress").value;
+        const bankAccount = document.getElementById("customerBankAccount").value;
+
+        let message = "New Book Order\n\n";
+        message += "Customer Name: " + name + "\n";
+        message += "Phone: " + phone + "\n";
+        message += "Email: " + email + "\n";
+        message += "Address: " + address + "\n";
+        message += "Bank Account: " + bankAccount + "\n\n";
+        message += "Order Details:\n";
+        
+        cart.forEach(item => {
+            const book = books[item.index];
+            const quantity = item.quantity;
+            message += `- ${book.title} (x${quantity})\n`;
+        });
+
+        message += "\nTotal: R" + total.toFixed(2);
+
+        const whatsappNumber = "27711049647";
+        const whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+
+        window.open(whatsappURL, "_blank");
+      });
+    </script>
+
+
+  </body>
+</html>

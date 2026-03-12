@@ -10,6 +10,7 @@
     
 </head>
 <body>
+    
     <header>
         <nav>
             <ul class="nav-links">
@@ -18,15 +19,20 @@
                 <li><a href="About.html">About</a></li>
                 <li><a href="return.html">Returns</a></li>
                 <li><a href="contact.html">Contact</a></li>
+				<li><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
             <div class="search-container">
                 <form action="search.html" method="get" class="search-form">
                     <input type="text" name="query" placeholder="Search by title or author" required>
-                    <button type="submit">Search</button>
+                    <button type="submit">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                        <span class="search-text">Search</span>
+                    </button>
                 </form>
             </div>
         </nav>
     </header>
+
 
     <main>
         <div>
@@ -46,6 +52,7 @@
                         <h3>Biko</h3>
                         <p class="Author">Steve Biko</p>
                         <p class="Price">R249.00</p>
+                        
                     </div>
                     <div class="product-item" onclick="openBookModal(2)">
                         <img src="pic/capefever.jpg" alt="Book Cover">
@@ -60,6 +67,7 @@
                         <h3>Coming in from the Cold</h3>
                         <p class="Author">Bonang Francis Mohale</p>
                         <p class="Price">R360.00</p>
+                        
                     </div>
                     <div class="product-item" onclick="openBookModal(4)">
                         <img src="pic/darkershade.jpg" alt="Book Cover">
@@ -73,24 +81,28 @@
                         <h3>Education</h3>
                         <p class="Author">Various</p>
                         <p class="Price">R380.00</p>
+                        
                     </div>
                     <div class="product-item" onclick="openBookModal(6)">
                         <img src="pic/haram.jpg" alt="Book Cover">
                         <h3>Haram</h3>
                         <p class="Author">Zubayr Charles</p>
                         <p class="Price">R350.00</p>
+                        
                     </div>
                     <div class="product-item" onclick="openBookModal(7)">
                         <img src="pic/mountains.jpg" alt="Book Cover">
                         <h3>Mountains</h3>
                         <p class="Author">Roger Lucey</p>
                         <p class="Price">R350.00</p>
+                        
                     </div>
                     <div class="product-item" onclick="openBookModal(8)">
                         <img src="pic/sitesofremembering.jpg" alt="Book Cover">
                         <h3>Sites of Remembering</h3>
                         <p class="Author">Abebe Zegeye</p>
                         <p class="Price">R612.00</p>
+                        
                     </div>      
                     
                 </div>
@@ -106,7 +118,22 @@
         
     </main>
 
+    <script>
+        function addToCart(index) {
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existing = cart.find(item => item.index === index);
+            if (existing) {
+                existing.quantity += 1;
+            } else {
+                cart.push({ index: index, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Item added to cart');
+        }
+    </script>
+
     <div id="bookModal" class="modal">
+
         <div class="modal-content">
             <span class="close" onclick="closeBookModal()">&times;</span>
             <div class="modal-body">
@@ -236,12 +263,60 @@
                 modal.style.display = 'none';
             }
         }
+        // Cart button injection
+        document.addEventListener("DOMContentLoaded", () => {
+            const gridItems = document.querySelectorAll(".product-item");
+            gridItems.forEach(item => {
+                const onclickAttr = item.getAttribute("onclick");
+                if (onclickAttr && onclickAttr.includes("openBookModal")) {
+                    const match = onclickAttr.match(/openBookModal\((\d+)\)/);
+                    if (match) {
+                        const bookIndex = parseInt(match[1], 10);
+                        const btnContainer = document.createElement("div");
+                        btnContainer.style.marginTop = "10px";
+                        const btn = document.createElement("button");
+                        btn.className = "add-to-cart-grid-btn";
+                        btn.innerHTML = `<i class="fa-solid fa-cart-shopping"></i> Add to Cart`;
+                        btn.style.width = "100%";
+                        btn.style.padding = "10px";
+                        btn.style.backgroundColor = "#d4a373";
+                        btn.style.color = "white";
+                        btn.style.border = "none";
+                        btn.style.borderRadius = "4px";
+                        btn.style.cursor = "pointer";
+                        btn.style.fontWeight = "bold";
+                        btn.style.transition = "background-color 0.3s";
+                        
+                        btn.onmouseover = () => btn.style.backgroundColor = "#5c4033";
+                        btn.onmouseleave = () => btn.style.backgroundColor = "#d4a373";
+
+                        btn.onclick = (e) => {
+                            e.stopPropagation(); // prevent modal from opening
+                            addToCartFromGrid(bookIndex);
+                        };
+                        btnContainer.appendChild(btn);
+                        item.appendChild(btnContainer);
+                    }
+                }
+            });
+        });
+
+        function addToCartFromGrid(index) {
+            const book = books[index];
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            const existingIndex = cart.findIndex(item => item.index === index);
+            if (existingIndex !== -1) {
+                cart[existingIndex].quantity += 1;
+            } else {
+                cart.push({ index: index, quantity: 1 });
+            }
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert(`1 x "${book.title}" added to cart!`);
+        }
     </script>
-    
     <footer class="site-footer">
         <div class="footer-top">
             <div class="footer-logo-section">
-                <img src="Logo.jpg" alt="The Book Lounge Logo">
                 <p class="footer-tagline">Cape Town's cozy independent bookstore</p>
             </div>
 
@@ -284,6 +359,8 @@
 
 </body>
 </html>
+
+
 
 
 
