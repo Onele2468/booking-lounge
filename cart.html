@@ -98,79 +98,57 @@
     </footer>
 
 
-
-
     <script src="books.js"></script>
-    <script>
+  <script>
+    const cartContainer = document.getElementById("cartContainer");
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+    let total = 0;
 
-      const cartContainer = document.getElementById("cartContainer");
-      const cart = JSON.parse(localStorage.getItem("cart")) || [];
-      let total = 0;
+    if (cart.length === 0) {
+      cartContainer.innerHTML = "<p>Your cart is empty!</p>";
+    } else {
+      cart.forEach(item => {
+        const book = books[item.index];
+        const quantity = item.quantity;
+        const priceNumber = parseFloat(book.price.replace("R", ""));
+        const subtotal = priceNumber * quantity;
+        total += subtotal;
 
-      if (cart.length === 0) {
-        cartContainer.innerHTML = "<p>Your cart is empty!</p>";
-      } else {
-        cart.forEach(item => {
-          const book = books[item.index];
-          const quantity = item.quantity;
-          const priceNumber = parseFloat(book.price.replace("R", ""));
-          const subtotal = priceNumber * quantity;
-          total += subtotal;
-
-          cartContainer.innerHTML += `
-            <div class="cart-item">
-              <img src="${book.image}" alt="${book.title}">
-              <div>
-                <h4>${book.title}</h4>
-                <p>Author: ${book.author}</p>
-                <p>Price: ${book.price}</p>
-                <p>Quantity: ${quantity}</p>
-                <p>Subtotal: R${subtotal.toFixed(2)}</p>
-              </div>
+        cartContainer.innerHTML += `
+          <div class="cart-item">
+            <img src="${book.image}" alt="${book.title}">
+            <div>
+              <h4>${book.title}</h4>
+              <p>Author: ${book.author}</p>
+              <p>Price: ${book.price}</p>
+              <p>Quantity: ${quantity}</p>
+              <p>Subtotal: R${subtotal.toFixed(2)}</p>
             </div>
-          `;
-        });
-      }
-
-      document.getElementById("cartTotal").textContent = `Total: R${total.toFixed(2)}`;
-
-      document.getElementById("clearCart").addEventListener("click", () => {
-        localStorage.removeItem("cart");
-        location.reload();
+          </div>
+        `;
       });
+    }
 
-      document.getElementById("purchaseForm").addEventListener("submit", function (e) {
-        e.preventDefault();
+    document.getElementById("cartTotal").textContent = `Total: R${total.toFixed(2)}`;
 
-        const name = document.getElementById("customerName").value;
-        const phone = document.getElementById("customerPhone").value;
-        const email = document.getElementById("customerEmail").value;
-        const address = document.getElementById("customerAddress").value;
-        const bankAccount = document.getElementById("customerBankAccount").value;
+    document.getElementById("clearCart").addEventListener("click", () => {
+      localStorage.removeItem("cart");
+      location.reload();
+    });
 
-        let message = "New Book Order\n\n";
-        message += "Customer Name: " + name + "\n";
-        message += "Phone: " + phone + "\n";
-        message += "Email: " + email + "\n";
-        message += "Address: " + address + "\n";
-        message += "Bank Account: " + bankAccount + "\n\n";
-        message += "Order Details:\n";
-        
-        cart.forEach(item => {
-            const book = books[item.index];
-            const quantity = item.quantity;
-            message += `- ${book.title} (x${quantity})\n`;
-        });
+    document.getElementById("purchaseForm").addEventListener("submit", function (e) {
+      e.preventDefault();
 
-        message += "\nTotal: R" + total.toFixed(2);
+      // You can add your payment processing logic here.
+      // For now, we'll just show a success message.
 
-        const whatsappNumber = "27711049647";
-        const whatsappURL = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(message);
+      alert("payment succed successfully. thank you for your oder");
 
-        window.open(whatsappURL, "_blank");
-      });
+      localStorage.removeItem("cart");
+      location.reload();
+    });
     </script>
-
+    
 
   </body>
 </html>
