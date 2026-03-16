@@ -45,7 +45,7 @@
           <input type="tel" id="customerPhone" placeholder="Phone Number" required>
           <input type="email" id="customerEmail" placeholder="Email Address" required>
           <textarea id="customerAddress" placeholder="Delivery Address" required></textarea>
-          <input type="text"id="" placeholder="Card Number" required>
+          <input type="text"id="Card Number" placeholder="Card Number" required>
           <div class="date-security-code">
           <input type="text" id="expiryDate" placeholder="Expiry Date" required>
           <input type="text" id="cvc" placeholder="CVC" required>
@@ -147,7 +147,8 @@
       // You can add your payment processing logic here.
       // For now, we'll just show a success message.
 
-      alert("payment succed successfully. thank you for your oder");
+      alert("Your payment has been processed successfully!");
+      alert("Thank you for your purchase!");
 
       localStorage.removeItem("cart");
       location.reload();
