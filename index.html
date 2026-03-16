@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>The Book Lounge</title>
     <meta charset="UTF-8">
@@ -7,10 +8,11 @@
     <meta name="author" content="Onele">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
+
 </head>
+
 <body>
-    
+
     <header>
         <nav>
             <ul class="nav-links">
@@ -19,7 +21,7 @@
                 <li><a href="About.html">About</a></li>
                 <li><a href="return.html">Returns</a></li>
                 <li><a href="contact.html">Contact</a></li>
-				<li><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
+                <li><a href="cart.html">Cart <i class="fa-solid fa-cart-shopping"></i></a></li>
             </ul>
             <div class="search-container">
                 <form action="search.html" method="get" class="search-form">
@@ -36,326 +38,201 @@
 
     <main>
         <div>
-        <section id="home">
-            <div class="hero">
-                <h1>Welcome to The Book Lounge</h1>
-                <p>Cape Town's cozy independent bookstore</p>
-                <div class="book-grid">
-                     <div class="product-item" onclick="openBookModal(0)">
-                        <img src="pic/this-country-hates-our-boys.jpg" alt="Book Cover">
-                        <h3>This Country Hates Our Boys</h3>
-                        <p class="Author">Mzamo Masito</p>
-                        <p class="Price">R360.00</p>
-                    </div>
-                    <div class="product-item" onclick="openBookModal(1)">
-                        <img src="pic/bikos.jpg" alt="Book Cover">
-                        <h3>Biko</h3>
-                        <p class="Author">Steve Biko</p>
-                        <p class="Price">R249.00</p>
-                        
-                    </div>
-                    <div class="product-item" onclick="openBookModal(2)">
-                        <img src="pic/capefever.jpg" alt="Book Cover">
-                        <h3>Cape Fever</h3>
-                        <p class="Author">Nadia Davids</p>
-                        <p class="Price">R360.00</p>
-                        <p  class="p-out-of-stock">Out of Stock</p>
+            <section id="home">
+                <div class="hero">
+                    <h1>Welcome to The Book Lounge</h1>
+                    <p>Cape Town's cozy independent bookstore</p>
+                    <div class="book-grid">
+                        <div class="product-item" onclick="openBookModal(0)">
+                            <img src="pic/this-country-hates-our-boys.jpg" alt="Book Cover">
+                            <h3>This Country Hates Our Boys</h3>
+                            <p class="Author">Mzamo Masito</p>
+                            <p class="Price">R360.00</p>
+                        </div>
+                        <div class="product-item" onclick="openBookModal(1)">
+                            <img src="pic/bikos.jpg" alt="Book Cover">
+                            <h3>Biko</h3>
+                            <p class="Author">Steve Biko</p>
+                            <p class="Price">R249.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(2)">
+                            <img src="pic/capefever.jpg" alt="Book Cover">
+                            <h3>Cape Fever</h3>
+                            <p class="Author">Nadia Davids</p>
+                            <p class="Price">R360.00</p>
+                            <p class="p-out-of-stock">Out of Stock</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(3)">
+                            <img src="pic/cominginfromthecold.jpg" alt="Book Cover">
+                            <h3>Coming in from the Cold</h3>
+                            <p class="Author">Bonang Francis Mohale</p>
+                            <p class="Price">R360.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(4)">
+                            <img src="pic/darkershade.jpg" alt="Book Cover">
+                            <h3>A Darker Shade</h3>
+                            <p class="Author">Deborah Posel</p>
+                            <p class="Price">R420.00</p>
+                            <p class="p-out-of-stock">Out of Stock</p>
+                        </div>
+                        <div class="product-item" onclick="openBookModal(5)">
+                            <img src="pic/education.jpg" alt="Book Cover">
+                            <h3>Education</h3>
+                            <p class="Author">Various</p>
+                            <p class="Price">R380.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(6)">
+                            <img src="pic/haram.jpg" alt="Book Cover">
+                            <h3>Haram</h3>
+                            <p class="Author">Zubayr Charles</p>
+                            <p class="Price">R350.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(7)">
+                            <img src="pic/mountains.jpg" alt="Book Cover">
+                            <h3>Mountains</h3>
+                            <p class="Author">Roger Lucey</p>
+                            <p class="Price">R350.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(8)">
+                            <img src="pic/sitesofremembering.jpg" alt="Book Cover">
+                            <h3>Sites of Remembering</h3>
+                            <p class="Author">Abebe Zegeye</p>
+                            <p class="Price">R612.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(9)">
+                            <img src="pic/improving-state-capacity-in-SA.jpg" alt="Book Cover">
+                            <h3>Improving the State Capacity in South Africa</h3>
+                            <p class="Author">Noluthando Matsiliza</p>
+                            <p class="Price">R287.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(10)">
+                            <img src="pic/operation-bounce-house.jpg" alt="Book Cover">
+                            <h3>Operation Bounce House</h3>
+                            <p class="Author">Matt Dinniman</p>
+                            <p class="Price">R430.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(11)">
+                            <img src="pic/helen.jpg" alt="Book Cover">
+                            <h3>Helen of Nowhere</h3>
+                            <p class="Author">Makenna Goodman</p>
+                            <p class="Price">R375.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(12)">
+                            <img src="pic/the-4-spent-the-day.jpg" alt="Book Cover">
+                            <h3>The 4 Spent the Day Together</h3>
+                            <p class="Author">Chris Kraus</p>
+                            <p class="Price">R485.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(13)">
+                            <img src="pic/crux.jpg" alt="Book Cover">
+                            <h3>Crux</h3>
+                            <p class="Author">Gabriel Tallent</p>
+                            <p class="Price">R405.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(14)">
+                            <img src="pic/roots-of-the-guava-tree.jpg" alt="Book Cover">
+                            <h3>The Roots of the Guava Tree</h3>
+                            <p class="Author">Sonia Daccarett</p>
+                            <p class="Price">R480.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(15)">
+                            <img src="pic/representations.jpg" alt="Book Cover">
+                            <h3>Representations of the Intellectual</h3>
+                            <p class="Author">Edward W. Said</p>
+                            <p class="Price">R375.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(16)">
+                            <img src="pic/between-two-rivers.jpg" alt="Book Cover">
+                            <h3>Between Two Rivers</h3>
+                            <p class="Author">Moudhy Al-Rashid</p>
+                            <p class="Price">R360.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(17)">
+                            <img src="pic/365-lessons.jpg" alt="Book Cover">
+                            <h3>365 Lessons from the Stoics</h3>
+                            <p class="Author">Andrea Kirk Assaf</p>
+                            <p class="Price">R330.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(18)">
+                            <img src="pic/land-of-sweet-forever.jpg" alt="Book Cover">
+                            <h3>The Land of Sweet Forever</h3>
+                            <p class="Author">Harper Lee</p>
+                            <p class="Price">R540.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(19)">
+                            <img src="pic/you-like-it-darker.jpg" alt="Book Cover">
+                            <h3>You Like it Darker</h3>
+                            <p class="Author">Stephen King</p>
+                            <p class="Price">R295.00</p>
+
+                        </div>
+                        <div class="product-item" onclick="openBookModal(20)">
+                            <img src="pic/when-water-wants-to.jpg" alt="Book Cover">
+                            <h3>When Water Wants To</h3>
+                            <p class="Author">Neil Coppen</p>
+                            <p class="Price">R330.00</p>
+
+                        </div>
 
                     </div>
-                    <div class="product-item" onclick="openBookModal(3)">
-                        <img src="pic/cominginfromthecold.jpg" alt="Book Cover">
-                        <h3>Coming in from the Cold</h3>
-                        <p class="Author">Bonang Francis Mohale</p>
-                        <p class="Price">R360.00</p>
-                        
+                </div>
+            </section>
+
+            <div class="about-wrapper">
+                <section id="about-preview">
+                    <h2>About Us</h2>
+                    <p>The Book Lounge is an independent bookstore in Cape Town CBD, hosting author events and selling
+                        local & international books.</p>
+                </section>
+            </div>
+
+            <!-- Book Modal -->
+            <div id="bookModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeBookModal()">&times;</span>
+                    <div class="modal-body">
+                        <div class="modal-left">
+                            <img id="modalBookImage" src="" alt="Book Cover">
+                        </div>
+                        <div class="modal-right">
+                            <h2 id="modalBookTitle"></h2>
+                            <p class="modal-author">by <span id="modalBookAuthor"></span></p>
+                            <p class="modal-price" id="modalBookPrice"></p>
+                            <div class="book-details">
+                                <p><strong>Format:</strong> <span id="modalBookFormat"></span></p>
+                                <p><strong>Pages:</strong> <span id="modalBookPages"></span></p>
+                            </div>
+                            <h3>About This Book</h3>
+                            <p id="modalBookDescription"></p>
+
+                        </div>
                     </div>
-                    <div class="product-item" onclick="openBookModal(4)">
-                        <img src="pic/darkershade.jpg" alt="Book Cover">
-                        <h3>A Darker Shade</h3>
-                        <p class="Author">Deborah Posel</p>
-                        <p class="Price">R420.00</p>
-                        <p class="p-out-of-stock">Out of Stock</p>
-                    </div>
-                    <div class="product-item" onclick="openBookModal(5)">
-                        <img src="pic/education.jpg" alt="Book Cover">
-                        <h3>Education</h3>
-                        <p class="Author">Various</p>
-                        <p class="Price">R380.00</p>
-                        
-                    </div>
-                    <div class="product-item" onclick="openBookModal(6)">
-                        <img src="pic/haram.jpg" alt="Book Cover">
-                        <h3>Haram</h3>
-                        <p class="Author">Zubayr Charles</p>
-                        <p class="Price">R350.00</p>
-                        
-                    </div>
-                    <div class="product-item" onclick="openBookModal(7)">
-                        <img src="pic/mountains.jpg" alt="Book Cover">
-                        <h3>Mountains</h3>
-                        <p class="Author">Roger Lucey</p>
-                        <p class="Price">R350.00</p>
-                        
-                    </div>
-                    <div class="product-item" onclick="openBookModal(8)">
-                        <img src="pic/sitesofremembering.jpg" alt="Book Cover">
-                        <h3>Sites of Remembering</h3>
-                        <p class="Author">Abebe Zegeye</p>
-                        <p class="Price">R612.00</p>
-                        
-                    </div>      
-                    
                 </div>
             </div>
-        </section>
 
-        <div class="about-wrapper">
-        <section id="about-preview">
-            <h2>About Us</h2>
-            <p>The Book Lounge is an independent bookstore in Cape Town CBD, hosting author events and selling local & international books.</p>
-        </section>
-        </div>
-        
     </main>
 
+    <script src="books.js"></script>
     <script>
-        function addToCart(index) {
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            const existing = cart.find(item => item.index === index);
-            if (existing) {
-                existing.quantity += 1;
-            } else {
-                cart.push({ index: index, quantity: 1 });
-            }
-            localStorage.setItem('cart', JSON.stringify(cart));
-            alert('Item added to cart');
-        }
-    </script>
-
-    <div id="bookModal" class="modal">
-
-        <div class="modal-content">
-            <span class="close" onclick="closeBookModal()">&times;</span>
-            <div class="modal-body">
-                <div class="modal-left">
-                    <img id="modalBookImage" src="" alt="Book Cover">
-                </div>
-                <div class="modal-right">
-                    <h2 id="modalBookTitle"></h2>
-                    <p class="modal-author">by <span id="modalBookAuthor"></span></p>
-                    <p class="modal-price" id="modalBookPrice"></p>
-                    <div class="book-details">
-                        <p><strong>Format:</strong> <span id="modalBookFormat"></span></p>
-                        <p><strong>Pages:</strong> <span id="modalBookPages"></span></p>
-                    </div>
-                    <h3>About This Book</h3>
-                    <p id="modalBookDescription"></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <script>
-        const books = [
-            {
-                title: "This Country Hates Our Boys",
-                author: "Mzamo Masito",
-                price: "R360.00",
-                image: "pic/this-country-hates-our-boys.jpg",
-                pages: 300,
-                format: "Paperback",
-                description: "I do not hate boys, I hate men. This provocative statement sets the stage for a searing exploration of the complex relationship South African society holds with its Black and Coloured men and boys."
-            },
-            {
-                title: "Biko",
-                author: "Steve Biko",
-                price: "R320.00",
-                image: "pic/bikos.jpg",
-                pages: 190,
-                format: "Paperback",
-                description: "Examining Biko’s edgy ideas of power and resistance, Sithole provides new insights into struggles in South Africa over land ownership, media control, shared resources, and even the historical record."
-            },
-            {
-                title: "Cape Fever",
-                author: "Nadia Davids",
-                price: "R360.00",
-                image: "pic/capefever.jpg",
-                pages: 228,
-                format: "Paperback",
-                description: "Set in the Cape Colony just after WW1, Cape Fever is a superb depiction of the Cape in the 1920s, particularly of the Quarter and the District."
-            },
-            {
-                title: "Coming in from the Cold",
-                author: "Bonang Francis Mohale",
-                price: "R360.00",
-                image: "pic/cominginfromthecold.jpg",
-                pages: 272,
-                format: "Hardcover",
-                description: "From Daveyton to Davos, Professor Bonang Francis Mohale has defied odds, challenged the status quo and used every opportunity afforded to him to carve his own way in the world. More than that, he has chosen to take as many people as possible along with him."
-            },
-            {
-                title: "A Darker Shade",
-                author: "Deborah Posel",
-                price: "R420.00",
-                image: "pic/darkershade.jpg",
-                pages: 368,
-                format: "Hardcover",
-                description: "A personal journey through forgotten history, Darker Shade of Pale uncovers the hidden story of global migration at the turn of the twentieth century from the Jewish territories of the Russian Empire, called The Pale of Settlement."
-            },
-            {
-                title: "Education",
-                author: "Various",
-                price: "R380.00",
-                image: "pic/education.jpg",
-                pages: 281,
-                format: "Paperback",
-                description: "From Education Crisis to Organisation unlocks the story of how learning became a movement in South Africa – and changed lives beyond the classroom."
-            },
-            {
-                title: "Haram",
-                author: "Zubayr Charles",
-                price: "R350.00",
-                image: "pic/haram.jpg",
-                pages: 272,
-                format: "Paperback",
-                description: "Haram is an unflinching tale alive with hidden and unspoken desires."
-            },
-            {
-                title: "Mountains",
-                author: "Roger Lucey",
-                price: "R350.00",
-                image: "pic/mountains.jpg",
-                pages: 218,
-                format: "Paperback",
-                description: "Roger Lucey survived a covert security police campaign which destroyed his music career. He survived the drug addiction and disaffection which followed. He survived a decade and a half as a cameraman documenting the wars of Africa and Eastern Europe.."
-            },
-            {
-                title: "Sites of Remembering",
-                author: "Abebe Zegeye",
-                price: "R612.00",
-                image: "pic/sitesofremembering.jpg",
-                pages: 368,
-                format: "Hardcover",
-                description: "A richly illustrated, thought provoking and captivating book exploring the meaning and understanding of African art from an African perspective, through African memory. Zegeye challenges us to examine our reference points and to look again as we are taken on a journey through Sites of Remembering."
-            },
-            {
-                title:"Improving the State Capacity in South Africa",
-                author:"Noluthando Matsiliza",
-                price:"R287.00",
-                image:"pic/improving-the-state-capacity-in-south-africa.jpg",
-                pages:227,
-                format:"Paperback",
-                description:"This volume provides a critical examination of state capacity and the governance processes that shape public policy and service delivery in South Africa.",
-            },
-            {
-                title:"Operation Bounce House",
-                author:"Matt Dinniman",
-                price:"R430.00",
-                image:"pic/operation-bounce-house.jpg",
-                pages:400,
-                format:"Hardcover",
-                description:"All New Sonoran colonist Oliver Lewis ever wanted to do is run the family ranch and keep their aging fleet of intelligent agriculture bots ticking.",
-            },
-            {
-                title:"Helen of Nowhere",
-                author:"Makenna Goodman",
-                price: "R375.00", 
-                image: "pic/helen-of-nowhere.jpg", 
-                pages: 168,
-                format: "Paperback",
-                decription: "In the middle of the countryside, a realtor is showing a disgraced professor around an idyllic house. She speaks not only about the home’s many wonderful qualities but about its previous owner, the mystifying Helen, whose presence still seems to suffuse every fixture.",
-            },
-            {
-                title:"The four spent the day together",
-                author: "Chris Kraus", 
-                price: "R485.00", 
-                image: "pic/the-4-spent-the-day-together.jpg", 
-                pages: 320,
-                format: "Hardcover",
-                description: "On the Iron Range of northern Minnesota, at the end of the last decade, three teenagers shot and killed an older acquaintance after spending the day with him.",
-            },
-            {
-                title: "Crux",
-                author: "Gabriel Tallent", 
-                price: "R405.00", 
-                image: "pic/crux.jpg", 
-                pages: 416, 
-                format: "Hardcover",
-                deription: "Dan and Tamma are two Californian teenagers growing up dirt poor in the shadows of the Joshua Tree National Park, one of the world's great rock climbing meccas.",
-            },
-            {
-                title: "Roots of the Guava Tree",
-                 author: "Sonia Daccarett", 
-                 price: "R480.00", 
-                 image: "pic/roots-of-the-guava-tree.jpg", 
-                 pages: 3256, 
-                 format: "Hardcover",
-                 description: "Sonia Daccarett grew up with a Jewish mother and a Christian Palestinian father in Colombia during the drug-war 1980s.",
-
-            },
-            {
-                title: "Representations of the Intellectual", 
-                author: "Edward W. Said", 
-                price: "R375.00", 
-                image: "pic/representations-of-the-intellectual.jpg",
-                pages: 120,
-                format: "Paperback",
-                description: "In these impassioned and inspiring essays, based on his 1993 Reith Lectures, Edward Said explores what it means to be an intellectual.",
-
-            },
-            { 
-                title: "Between Two Rivers", 
-                author: "Moudhy Al-Rashid",
-                 price: "R360.00", 
-                 image: "pic/between-two-rivers.jpg",
-                pages: 336, 
-                format: "Paperback",
-                description: "Thousands of years ago, in a part of the world we now call ancient Mesopotamia, people began writing things down for the very first time.",
-
-            },
-            { 
-                title: "365 Lessons from the Stoics", 
-                author: "Andrea Kirk Assaf",
-                price: "R330.00",
-                image: "pic/365-lessons-from-the-stoics.jpg", 
-                pages: 256, 
-                format: "Paperback",
-                description: "Using translations of their original writings and meditations, 365 Lessons from the Stoics provides access to the Stoics’ ancient wisdom in bite-sized chunks.",
-
-            },
-            { 
-                title: "The Land of Sweet Forever", 
-                author: "Harper Lee",
-                 price: "R540.00", 
-                image: "pic/the-land-of-sweet-forever.jpg", 
-                pages: 224, 
-                format: "Paperback",
-                description: "Harper Lee's unforgettable novel about a young girl and her family in the Great Depression is a modern classic." 
-
-            },
-            { 
-                title: "You Like it Darker", 
-                author: "Shane Harper", 
-                price: "R375.00", 
-                image: "pic/you-like-it-darker.jpg", 
-                pages: 512, 
-                format: "Hardcover",
-                description: "You like it darker? Fine, so do I” writes Stephen King in the afterword to this magnificent new collection of stories that delve into the darker part of life – both metaphorical and literal.",
-
-            },
-            { title: "When Water Wants To", 
-            author: "Neil Coppen", 
-            price: "R33O.00", 
-            Image: "pic/when-water-wants-to.jpg", 
-            pages: 180, 
-            format: "Paperback",
-            description: "When Water Wants To brings together the ten winners of the literary competition, the DALRO Can Themba Short Story Award.",
-
-            }
-        ];
-
-        function openBookModal(bookIndex) {
-            const book = books[bookIndex];
+        function openBookModal(index) {
+            const book = books[index];
             document.getElementById('modalBookImage').src = book.image;
             document.getElementById('modalBookTitle').textContent = book.title;
             document.getElementById('modalBookAuthor').textContent = book.author;
@@ -363,20 +240,29 @@
             document.getElementById('modalBookPages').textContent = book.pages + ' pages';
             document.getElementById('modalBookFormat').textContent = book.format;
             document.getElementById('modalBookDescription').textContent = book.description;
-            
+
             document.getElementById('bookModal').style.display = 'block';
+            document.body.style.overflow = "hidden";
         }
 
         function closeBookModal() {
             document.getElementById('bookModal').style.display = 'none';
+            document.body.style.overflow = "auto";
         }
 
-        window.onclick = function(event) {
+/*************  ✨ Windsurf Command ⭐  *************/
+/**
+ * Closes the book modal if the user clicks outside of it.
+ * @listens window:click
+ */
+/*******  1ce87979-2c2f-4f5e-9afc-12005d259efd  *******/
+        window.onclick = function (event) {
             const modal = document.getElementById('bookModal');
             if (event.target === modal) {
-                modal.style.display = 'none';
+                closeBookModal();
             }
         }
+
         // Cart button injection
         document.addEventListener("DOMContentLoaded", () => {
             const gridItems = document.querySelectorAll(".product-item");
@@ -400,7 +286,7 @@
                         btn.style.cursor = "pointer";
                         btn.style.fontWeight = "bold";
                         btn.style.transition = "background-color 0.3s";
-                        
+
                         btn.onmouseover = () => btn.style.backgroundColor = "#5c4033";
                         btn.onmouseleave = () => btn.style.backgroundColor = "#d4a373";
 
@@ -469,18 +355,12 @@
         <div class="footer-divider"></div>
 
         <div class="footer-bottom">
-             <p>&copy; 2026 The Book Lounge. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
+            <p>&copy; 2026 The Book Lounge. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
         </div>
 
     </footer>
 
-   
 
 </body>
+
 </html>
-
-
-
-
-
-

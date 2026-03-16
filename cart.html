@@ -45,11 +45,12 @@
           <input type="tel" id="customerPhone" placeholder="Phone Number" required>
           <input type="email" id="customerEmail" placeholder="Email Address" required>
           <textarea id="customerAddress" placeholder="Delivery Address" required></textarea>
-          <input type="text"id="Card Number" placeholder="Card Number" required>
+          <input type="text"id="" placeholder="Card Number" required>
           <div class="date-security-code">
           <input type="text" id="expiryDate" placeholder="Expiry Date" required>
           <input type="text" id="cvc" placeholder="CVC" required>
           </div>
+          
           <button type="submit" id="placeOrder">Place Order</button>
         </form>
     </main>
@@ -99,7 +100,6 @@
         <div class="footer-bottom">
              <p>&copy; 2026 The Book Lounge. All rights reserved. | <a href="privacy-policy.html">Privacy Policy</a></p>
         </div>
-
     </footer>
 
 
@@ -147,12 +147,69 @@
       // You can add your payment processing logic here.
       // For now, we'll just show a success message.
 
-      alert("Your payment has been processed successfully!");
-      alert("Thank you for your purchase!");
+      alert("payment succed successfully. thank you for your oder");
 
       localStorage.removeItem("cart");
       location.reload();
     });
+
+
+
+
+
+
+    const depositForm = document.getElementById("depositForm");
+depositForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  // Get the deposit amount from the form
+  const depositAmount = parseFloat(document.getElementById("depositAmount").value);
+
+  // Get the card details from the form
+  const cardNumber = document.getElementById("cardNumber").value;
+  const expiryDate = document.getElementById("expiryDate").value;
+  const cvc = document.getElementById("cvc").value;
+
+  // Make an API call to the server to process the deposit
+  fetch("/api/deposit", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      depositAmount,
+      cardNumber,
+      expiryDate,
+      cvc
+    })
+  })
+  .then(response => response.json())
+  .then(data => {
+    // Handle the response from the server
+    if (data.success) {
+      // Deposit succeeded
+      alert("Deposit succeeded successfully.");
+      // Update the balance on the page
+      const balanceElement = document.getElementById("balance");
+      balanceElement.textContent = `Balance: R${data.balance}`;
+    } else {
+      // Deposit failed
+      alert("Deposit failed. Please try again.");
+    }
+  })
+  .catch(error => {
+    // Handle any errors that occurred during the API call
+    console.error(error);
+    alert("An error occurred. Please try again later.");
+  });
+
+  // Clear the deposit form
+  document.getElementById("depositAmount").value = "";
+  document.getElementById("cardNumber").value = "";
+  document.getElementById("expiryDate").value = "";
+  document.getElementById("cvc").value = "";
+});
+
     </script>
     
 
