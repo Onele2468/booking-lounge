@@ -73,7 +73,7 @@ nav {
 .search-form button {
     background-color: #d4a373;
     border: none;
-    color: #fff;
+    color: #977637;
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
@@ -110,6 +110,92 @@ nav {
   transition: background-color 0.3s;
 }
 
+/* Account Section */
+.sign-in-log-in-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin: 50px auto;
+  max-width: 1000px;
+}
+
+.sign-in-container,
+.log-in-container {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease;
+}
+
+.sign-in-container:hover,
+.log-in-container:hover {
+  transform: translateY(-5px);
+}
+
+.sign-in-container h2,
+.log-in-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #2c3e50;
+}
+
+form label {
+  display: block;
+  margin: 12px 0 6px;
+  font-weight: 600;
+  color: #444;
+}
+
+form input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  margin-bottom: 18px;
+  font-size: 14px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+form input:focus {
+  border-color: #1f2221;
+  box-shadow: 0 0 6px rgba(42, 44, 44, 0.3);
+  outline: none;
+}
+
+form button {
+  width: 100%;
+  padding: 14px;
+  background:  #d4a373;
+  color: #5c4033;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: #5c4033;
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: 10px;
+}
+
+.forgot-password a {
+  color: #5c4033;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}
+
 #backToTop:hover {
   background-color: #555;
 }
@@ -134,6 +220,8 @@ h3 {
     padding: 24px 0 12px;
 }
 
+
+
 .book-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -144,7 +232,7 @@ h3 {
 
 .book-grid img {
     width: 100%;
-    height: auto;
+    height: 10x;
     max-height: 520px;
     object-fit: cover;
     border-radius: 6px;
@@ -208,6 +296,8 @@ h3 {
 
 .product-item .p-out-of-stock {
     color: slategray;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
 
@@ -807,7 +897,6 @@ img {
 
 .product-item.out-of-stock {
     opacity: 0.6;
-    position: relative;
 }
 
 .product-item.out-of-stock img {
@@ -1889,6 +1978,14 @@ img {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.05);
 }
 
+.clear{
+    background-color: #5c4033;
+    color: white;
+}
+.clear:hover {
+    background-color: #d4a373;
+}
+
 .cart-item {
     display: flex;
     align-items: center;
@@ -1946,5 +2043,19 @@ img {
 }
 
 #checkoutWhatsApp:hover {
+    background-color: #d4a373;
+}
+
+.remove-item {
+    background-color: #5c4033;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.remove-item:hover {
     background-color: #d4a373;
 }

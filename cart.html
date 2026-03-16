@@ -15,6 +15,7 @@
     <header>
       <nav>
         <ul class="nav-links">
+          <li><a href="login.html">Sign in<i class="fa-solid fa-circle-user"></i>
           <li><a href="index.html">Home</a></li>
           <li><a href="product.html">Products</a></li>
           <li><a href="about.html">About</a></li>
@@ -38,7 +39,7 @@
       <h1>Your Shopping Cart</h1>
         <div class="cart-container" id="cartContainer"></div>
         <p class="cart-total" id="cartTotal">Total: R0.00</p>
-        <button id="clearCart">Clear Cart</button>
+        <button class="clear" id="clearCart">Clear Cart</button>
       <h2>Customer Purchase Form</h2>
         <form id="purchaseForm" class="payment-form">
           <input type="text" id="customerName" placeholder="Full Name" required>
@@ -112,7 +113,7 @@
     if (cart.length === 0) {
       cartContainer.innerHTML = "<p>Your cart is empty!</p>";
     } else {
-      cart.forEach(item => {
+      cart.forEach((item, index) => {
         const book = books[item.index];
         const quantity = item.quantity;
         const priceNumber = parseFloat(book.price.replace("R", ""));
@@ -128,6 +129,7 @@
               <p>Price: ${book.price}</p>
               <p>Quantity: ${quantity}</p>
               <p>Subtotal: R${subtotal.toFixed(2)}</p>
+              <button class="remove-item" data-index="${index}">Remove</button>
             </div>
           </div>
         `;
@@ -141,6 +143,20 @@
       location.reload();
     });
 
+    document.querySelectorAll('.remove-item').forEach(button => {
+      button.addEventListener('click', (e) => {
+        const indexToRemove = e.target.getAttribute('data-index');
+        removeItem(indexToRemove);
+      });
+    });
+
+    function removeItem(index) {
+      let cart = JSON.parse(localStorage.getItem("cart")) || [];
+      cart.splice(index, 1);
+      localStorage.setItem("cart", JSON.stringify(cart));
+      location.reload();
+    }
+
     document.getElementById("purchaseForm").addEventListener("submit", function (e) {
       e.preventDefault();
 
@@ -152,63 +168,6 @@
       localStorage.removeItem("cart");
       location.reload();
     });
-
-
-
-
-
-
-    const depositForm = document.getElementById("depositForm");
-depositForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-
-  // Get the deposit amount from the form
-  const depositAmount = parseFloat(document.getElementById("depositAmount").value);
-
-  // Get the card details from the form
-  const cardNumber = document.getElementById("cardNumber").value;
-  const expiryDate = document.getElementById("expiryDate").value;
-  const cvc = document.getElementById("cvc").value;
-
-  // Make an API call to the server to process the deposit
-  fetch("/api/deposit", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      depositAmount,
-      cardNumber,
-      expiryDate,
-      cvc
-    })
-  })
-  .then(response => response.json())
-  .then(data => {
-    // Handle the response from the server
-    if (data.success) {
-      // Deposit succeeded
-      alert("Deposit succeeded successfully.");
-      // Update the balance on the page
-      const balanceElement = document.getElementById("balance");
-      balanceElement.textContent = `Balance: R${data.balance}`;
-    } else {
-      // Deposit failed
-      alert("Deposit failed. Please try again.");
-    }
-  })
-  .catch(error => {
-    // Handle any errors that occurred during the API call
-    console.error(error);
-    alert("An error occurred. Please try again later.");
-  });
-
-  // Clear the deposit form
-  document.getElementById("depositAmount").value = "";
-  document.getElementById("cardNumber").value = "";
-  document.getElementById("expiryDate").value = "";
-  document.getElementById("cvc").value = "";
-});
 
     </script>
     
