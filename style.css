@@ -131,7 +131,7 @@ h3 {
 
 .hero {
     text-align: center;
-    padding: 24px 0 12px;
+    padding: 24px 0 9px;
 }
 
 
@@ -162,6 +162,7 @@ h3 {
     padding: 2px 12px;
     background: linear-gradient(180deg, rgba(92, 64, 51, 0.03), transparent 60%);
     border-radius: 6px;
+
 }
 
 .about-grid {
